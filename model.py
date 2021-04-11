@@ -37,12 +37,17 @@ class LatentModel(nn.Module):
             self.feat_dim = 200
             self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=34, stride=9)
 
+        self.bn = nn.BatchNorm1d(self.d)
+        self.dropout = nn.Dropout(dropout)
+
     def forward(self, src):
         # Input:    src(N, S, E)
         # Output:   out(N, u, d)
         x = src.permute(0, 2, 1)    # pytorch是对最后一维做卷积的, 因此需要把S换到最后
-        out = self.conv1(x)
-        return out.permute(0, 2, 1)
+        x = self.conv1(x)
+        x = self.bn(x.permute(0, 2, 1))
+        out = F.relu(self.dropout(x))
+        return out
 
 
 # 3 - Persuasiveness Module
