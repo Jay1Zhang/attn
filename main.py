@@ -47,12 +47,14 @@ if __name__ == '__main__':
     # 2 - Initialize m2p2 models
     # initialize multiple models to output the latent embeddings for a,v,l
     latent_models = {mod: model.LatentModel(mod, DP).to(device) for mod in MODS}
-    attn_model = model.AttnModel().to(device)
+    bi_attn_model = model.BiAttnModel().to(device)
+    tri_attn_model = model.TriAttnModel().to(device)
     pers_model = model.PersModel(nmod=len(MODS), nfeat=N_FEATS,  dropout=DP).to(device)
 
     # initialize m2p2 models and hyper-parameters and optimizer
     m2p2_models = latent_models
-    m2p2_models['attn'] = attn_model
+    m2p2_models['bi_attn'] = bi_attn_model
+    m2p2_models['tri_attn'] = tri_attn_model
     m2p2_models['pers'] = pers_model
 
     m2p2_params = get_hyper_params(m2p2_models)
@@ -71,6 +73,7 @@ if __name__ == '__main__':
     # 4 - Train or Test
     if not TEST_MODE:
         min_loss_pers = 1e5
+        max_acc = 0
         #### Master Procedure Start ####
         for epoch in range(N_EPOCHS):
             start_time = time.time()
@@ -79,9 +82,11 @@ if __name__ == '__main__':
             train_loss_pers, train_acc = train_m2p2(m2p2_models, MODS, tra_loader, m2p2_optim, m2p2_scheduler)
             # eval and save m2p2 model
             eval_loss_pers, eval_acc = eval_m2p2(m2p2_models, MODS, val_loader)
-            if eval_loss_pers < min_loss_pers:
-                print(f'[SAVE MODEL] eval pers loss: {eval_loss_pers:.5f}\tmini pers loss: {min_loss_pers:.5f}')
+            if eval_loss_pers < min_loss_pers or eval_acc > max_acc:
+                print(f'[SAVE MODEL] eval pers loss: {eval_loss_pers:.5f}\tmini pers loss: {min_loss_pers:.5f}'
+                      f'\teval acc: {eval_acc:.4f}\tmax_acc: {max_acc:.4f}')
                 min_loss_pers = eval_loss_pers
+                max_acc = eval_acc
                 saveModel(FOLD, m2p2_models)
 
             # output loss information
