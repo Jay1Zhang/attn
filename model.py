@@ -44,9 +44,10 @@ class LatentModel(nn.Module):
         # Input:    src(N, S, E)
         # Output:   out(N, u, d)
         x = src.permute(0, 2, 1)    # pytorch是对最后一维做卷积的, 因此需要把S换到最后
-        x = self.conv1(x)
-        x = self.bn(x.permute(0, 2, 1))
-        out = F.relu(self.dropout(x))
+        x = self.conv1(x)           # (N, S, E) -> (N, d, u)
+        x = self.bn(x)
+        x = F.relu(self.dropout(x))
+        out = x.permute(0, 2, 1)    # (N, u, d)
         return out
 
 

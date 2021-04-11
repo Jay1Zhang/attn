@@ -57,7 +57,7 @@ if __name__ == '__main__':
     m2p2_optim = optim.Adam(m2p2_params, lr=LR, weight_decay=W_DECAY)
     m2p2_scheduler = optim.lr_scheduler.StepLR(m2p2_optim, step_size=STEP_SIZE, gamma=SCHE_GAMMA)
 
-    #if VERBOSE:
+    # if VERBOSE:
     #    print('####### total m2p2 hyper-parameters ', count_hyper_params(m2p2_params))
     #    for k, v in m2p2_models.items():
     #        print(v)
