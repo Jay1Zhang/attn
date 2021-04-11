@@ -33,7 +33,7 @@ if __name__ == '__main__':
     TEST_MODE = args.test_mode
     VERBOSE = args.verbose
     #TEST_MODE = True
-    #VERBOSE = True
+    VERBOSE = True
     print("FOLD", FOLD)
 
     #############
@@ -47,21 +47,23 @@ if __name__ == '__main__':
     # 2 - Initialize m2p2 models
     # initialize multiple models to output the latent embeddings for a,v,l
     latent_models = {mod: model.LatentModel(mod, DP).to(device) for mod in MODS}
+    attn_model = model.AttnModel().to(device)
     pers_model = model.PersModel(nmod=len(MODS), nfeat=N_FEATS,  dropout=DP).to(device)
 
     # initialize m2p2 models and hyper-parameters and optimizer
     m2p2_models = latent_models
+    m2p2_models['attn'] = attn_model
     m2p2_models['pers'] = pers_model
 
     m2p2_params = get_hyper_params(m2p2_models)
     m2p2_optim = optim.Adam(m2p2_params, lr=LR, weight_decay=W_DECAY)
     m2p2_scheduler = optim.lr_scheduler.StepLR(m2p2_optim, step_size=STEP_SIZE, gamma=SCHE_GAMMA)
 
-    #if VERBOSE:
-    #    print('####### total m2p2 hyper-parameters ', count_hyper_params(m2p2_params))
-    #    for k, v in m2p2_models.items():
-    #        print(v)
-    #        print(count_hyper_params(v.parameters()))
+    if VERBOSE:
+       print('####### total m2p2 hyper-parameters ', count_hyper_params(m2p2_params))
+       for k, v in m2p2_models.items():
+           print(v)
+           print(count_hyper_params(v.parameters()))
 
     # 3 - Initialize concat weights: w_a, w_v, w_l
     # weight_mod = {mod: 1. / len(MODS) for mod in MODS}

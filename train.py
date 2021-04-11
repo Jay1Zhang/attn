@@ -35,9 +35,10 @@ def fit_m2p2(m2p2_models, MODS, sample_batched):
     for mod in MODS:
         latent_emb_mod[mod] = m2p2_models[mod](sample_batched[f'{mod}_data'].to(device))
 
+    attn_emb = m2p2_models['attn'](latent_emb_mod)
     meta_emb = gen_meta_emb(sample_batched)
 
-    y_pred = m2p2_models['pers'](latent_emb_mod, meta_emb)
+    y_pred = m2p2_models['pers'](latent_emb_mod, attn_emb, meta_emb)
     y_true = sample_batched['ed_vote'].float().to(device)
 
     # calc loss
