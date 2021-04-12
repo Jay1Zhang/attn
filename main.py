@@ -71,6 +71,7 @@ if __name__ == '__main__':
     # 4 - Train or Test
     if not TEST_MODE:
         min_loss_pers = 1e5
+        max_acc = 0
         #### Master Procedure Start ####
         for epoch in range(N_EPOCHS):
             start_time = time.time()
@@ -79,9 +80,10 @@ if __name__ == '__main__':
             train_loss_pers, train_acc = train_m2p2(m2p2_models, MODS, tra_loader, m2p2_optim, m2p2_scheduler)
             # eval and save m2p2 model
             eval_loss_pers, eval_acc = eval_m2p2(m2p2_models, MODS, val_loader)
-            if eval_loss_pers < min_loss_pers:
-                print(f'[SAVE MODEL] eval pers loss: {eval_loss_pers:.5f}\tmini pers loss: {min_loss_pers:.5f}')
+            if eval_loss_pers < min_loss_pers or eval_acc > max_acc:
+                print(f'[SAVE MODEL] eval pers loss: {eval_loss_pers:.5f}\tmini pers loss: {min_loss_pers:.5f}\teval acc: {eval_acc:.4f}\tmax acc: {max_acc:.4f}')
                 min_loss_pers = eval_loss_pers
+                max_acc = eval_acc
                 saveModel(FOLD, m2p2_models)
 
             # output loss information
