@@ -2,6 +2,9 @@
 # -*- coding:utf-8 -*-
 
 import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,4,5,6"
+
 import torch
 import torch.nn as nn
 import numpy as np
@@ -30,7 +33,7 @@ N_EPOCHS = 30   # master training procedure (alg 1 in paper)
 LR = 1e-3
 W_DECAY = 1e-5      # L2正则系数
 STEP_SIZE = 10
-SCHE_GAMMA = 0.2
+SCHE_GAMMA = 0.5
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 

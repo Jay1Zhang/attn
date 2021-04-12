@@ -1,0 +1,1033 @@
+FOLD 0
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02066	mini pers loss: 100000.00000	eval acc: 0.4256	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 30s
+	Train persuasion loss:0.02480	Train Accuracy:0.45207
+	Eval persuasion loss:0.02066	Eval Accuracy:0.42560
+[SAVE MODEL] eval pers loss: 0.02663	mini pers loss: 0.02066	eval acc: 0.5275	max acc: 0.4256
+Epoch: 02/30 | Time: 0m 21s
+	Train persuasion loss:0.02164	Train Accuracy:0.46003
+	Eval persuasion loss:0.02663	Eval Accuracy:0.52753
+[SAVE MODEL] eval pers loss: 0.02165	mini pers loss: 0.02663	eval acc: 0.5670	max acc: 0.5275
+Epoch: 03/30 | Time: 0m 20s
+	Train persuasion loss:0.01735	Train Accuracy:0.51487
+	Eval persuasion loss:0.02165	Eval Accuracy:0.56696
+Epoch: 04/30 | Time: 0m 20s
+	Train persuasion loss:0.01513	Train Accuracy:0.60121
+	Eval persuasion loss:0.02324	Eval Accuracy:0.49479
+Epoch: 05/30 | Time: 0m 25s
+	Train persuasion loss:0.01215	Train Accuracy:0.64632
+	Eval persuasion loss:0.03298	Eval Accuracy:0.56696
+Epoch: 06/30 | Time: 0m 22s
+	Train persuasion loss:0.00947	Train Accuracy:0.74183
+	Eval persuasion loss:0.02644	Eval Accuracy:0.42411
+Epoch: 07/30 | Time: 0m 23s
+	Train persuasion loss:0.00706	Train Accuracy:0.78705
+	Eval persuasion loss:0.02583	Eval Accuracy:0.55878
+Epoch: 08/30 | Time: 0m 21s
+	Train persuasion loss:0.00667	Train Accuracy:0.81991
+	Eval persuasion loss:0.02446	Eval Accuracy:0.48735
+Epoch: 09/30 | Time: 0m 23s
+	Train persuasion loss:0.00540	Train Accuracy:0.83584
+	Eval persuasion loss:0.02679	Eval Accuracy:0.39286
+Epoch: 10/30 | Time: 0m 23s
+	Train persuasion loss:0.00421	Train Accuracy:0.90136
+	Eval persuasion loss:0.02956	Eval Accuracy:0.40848
+Epoch: 11/30 | Time: 0m 26s
+	Train persuasion loss:0.00313	Train Accuracy:0.92339
+	Eval persuasion loss:0.02497	Eval Accuracy:0.47991
+Epoch: 12/30 | Time: 0m 25s
+	Train persuasion loss:0.00289	Train Accuracy:0.93745
+	Eval persuasion loss:0.02607	Eval Accuracy:0.42485
+Epoch: 13/30 | Time: 0m 25s
+	Train persuasion loss:0.00251	Train Accuracy:0.94521
+	Eval persuasion loss:0.02712	Eval Accuracy:0.40104
+Epoch: 14/30 | Time: 0m 25s
+	Train persuasion loss:0.00229	Train Accuracy:0.95620
+	Eval persuasion loss:0.02660	Eval Accuracy:0.41667
+Epoch: 15/30 | Time: 0m 24s
+	Train persuasion loss:0.00205	Train Accuracy:0.96250
+	Eval persuasion loss:0.02534	Eval Accuracy:0.40104
+Epoch: 16/30 | Time: 0m 24s
+	Train persuasion loss:0.00195	Train Accuracy:0.97172
+	Eval persuasion loss:0.02677	Eval Accuracy:0.40848
+Epoch: 17/30 | Time: 0m 26s
+	Train persuasion loss:0.00173	Train Accuracy:0.96875
+	Eval persuasion loss:0.02538	Eval Accuracy:0.39286
+Epoch: 18/30 | Time: 0m 24s
+	Train persuasion loss:0.00169	Train Accuracy:0.97344
+	Eval persuasion loss:0.02667	Eval Accuracy:0.40848
+Epoch: 19/30 | Time: 0m 24s
+	Train persuasion loss:0.00162	Train Accuracy:0.97188
+	Eval persuasion loss:0.02649	Eval Accuracy:0.40104
+Epoch: 20/30 | Time: 0m 24s
+	Train persuasion loss:0.00150	Train Accuracy:0.97490
+	Eval persuasion loss:0.02726	Eval Accuracy:0.39286
+Epoch: 21/30 | Time: 0m 23s
+	Train persuasion loss:0.00142	Train Accuracy:0.97656
+	Eval persuasion loss:0.02719	Eval Accuracy:0.39286
+Epoch: 22/30 | Time: 0m 24s
+	Train persuasion loss:0.00156	Train Accuracy:0.97500
+	Eval persuasion loss:0.02675	Eval Accuracy:0.39286
+Epoch: 23/30 | Time: 0m 26s
+	Train persuasion loss:0.00138	Train Accuracy:0.97959
+	Eval persuasion loss:0.02662	Eval Accuracy:0.41667
+Epoch: 24/30 | Time: 0m 22s
+	Train persuasion loss:0.00159	Train Accuracy:0.97031
+	Eval persuasion loss:0.02658	Eval Accuracy:0.41667
+Epoch: 25/30 | Time: 0m 23s
+	Train persuasion loss:0.00144	Train Accuracy:0.98281
+	Eval persuasion loss:0.02663	Eval Accuracy:0.41667
+Epoch: 26/30 | Time: 0m 24s
+	Train persuasion loss:0.00134	Train Accuracy:0.97344
+	Eval persuasion loss:0.02694	Eval Accuracy:0.41667
+Epoch: 27/30 | Time: 0m 24s
+	Train persuasion loss:0.00136	Train Accuracy:0.97813
+	Eval persuasion loss:0.02618	Eval Accuracy:0.41667
+Epoch: 28/30 | Time: 0m 25s
+	Train persuasion loss:0.00129	Train Accuracy:0.97813
+	Eval persuasion loss:0.02579	Eval Accuracy:0.41667
+Epoch: 29/30 | Time: 0m 28s
+	Train persuasion loss:0.00125	Train Accuracy:0.97954
+	Eval persuasion loss:0.02663	Eval Accuracy:0.41667
+Epoch: 30/30 | Time: 0m 26s
+	Train persuasion loss:0.00127	Train Accuracy:0.98120
+	Eval persuasion loss:0.02667	Eval Accuracy:0.41667
+FOLD 0
+Let's use 4 GPUs!
+Test persuasion loss:0.01507	Test Accuracy:0.41379
+MSE: 0.015
+FOLD 1
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02410	mini pers loss: 100000.00000	eval acc: 0.5000	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 28s
+	Train persuasion loss:0.02505	Train Accuracy:0.42599
+	Eval persuasion loss:0.02410	Eval Accuracy:0.50000
+[SAVE MODEL] eval pers loss: 0.02068	mini pers loss: 0.02410	eval acc: 0.5000	max acc: 0.5000
+Epoch: 02/30 | Time: 0m 26s
+	Train persuasion loss:0.01967	Train Accuracy:0.46875
+	Eval persuasion loss:0.02068	Eval Accuracy:0.50000
+[SAVE MODEL] eval pers loss: 0.01980	mini pers loss: 0.02068	eval acc: 0.5312	max acc: 0.5000
+Epoch: 03/30 | Time: 0m 28s
+	Train persuasion loss:0.01596	Train Accuracy:0.57072
+	Eval persuasion loss:0.01980	Eval Accuracy:0.53125
+Epoch: 04/30 | Time: 0m 27s
+	Train persuasion loss:0.01195	Train Accuracy:0.66776
+	Eval persuasion loss:0.02405	Eval Accuracy:0.48438
+Epoch: 05/30 | Time: 0m 22s
+	Train persuasion loss:0.00929	Train Accuracy:0.71711
+	Eval persuasion loss:0.02215	Eval Accuracy:0.53125
+Epoch: 06/30 | Time: 0m 28s
+	Train persuasion loss:0.00844	Train Accuracy:0.76151
+	Eval persuasion loss:0.02357	Eval Accuracy:0.53125
+Epoch: 07/30 | Time: 0m 27s
+	Train persuasion loss:0.00703	Train Accuracy:0.79934
+	Eval persuasion loss:0.02773	Eval Accuracy:0.45312
+Epoch: 08/30 | Time: 0m 25s
+	Train persuasion loss:0.00603	Train Accuracy:0.84375
+	Eval persuasion loss:0.02871	Eval Accuracy:0.42188
+Epoch: 09/30 | Time: 0m 24s
+	Train persuasion loss:0.00531	Train Accuracy:0.84375
+	Eval persuasion loss:0.02814	Eval Accuracy:0.42188
+Epoch: 10/30 | Time: 0m 25s
+	Train persuasion loss:0.00438	Train Accuracy:0.89638
+	Eval persuasion loss:0.02746	Eval Accuracy:0.42188
+Epoch: 11/30 | Time: 0m 24s
+	Train persuasion loss:0.00324	Train Accuracy:0.92928
+	Eval persuasion loss:0.02580	Eval Accuracy:0.40625
+Epoch: 12/30 | Time: 0m 24s
+	Train persuasion loss:0.00295	Train Accuracy:0.92928
+	Eval persuasion loss:0.02612	Eval Accuracy:0.39062
+Epoch: 13/30 | Time: 0m 22s
+	Train persuasion loss:0.00286	Train Accuracy:0.94408
+	Eval persuasion loss:0.02591	Eval Accuracy:0.40625
+Epoch: 14/30 | Time: 0m 28s
+	Train persuasion loss:0.00263	Train Accuracy:0.94243
+	Eval persuasion loss:0.02582	Eval Accuracy:0.40625
+Epoch: 15/30 | Time: 0m 25s
+	Train persuasion loss:0.00236	Train Accuracy:0.95066
+	Eval persuasion loss:0.02570	Eval Accuracy:0.45312
+Epoch: 16/30 | Time: 0m 24s
+	Train persuasion loss:0.00257	Train Accuracy:0.94079
+	Eval persuasion loss:0.02608	Eval Accuracy:0.46875
+Epoch: 17/30 | Time: 0m 22s
+	Train persuasion loss:0.00216	Train Accuracy:0.95724
+	Eval persuasion loss:0.02646	Eval Accuracy:0.46875
+Epoch: 18/30 | Time: 0m 23s
+	Train persuasion loss:0.00192	Train Accuracy:0.95724
+	Eval persuasion loss:0.02576	Eval Accuracy:0.45312
+Epoch: 19/30 | Time: 0m 28s
+	Train persuasion loss:0.00202	Train Accuracy:0.96053
+	Eval persuasion loss:0.02606	Eval Accuracy:0.48438
+Epoch: 20/30 | Time: 0m 26s
+	Train persuasion loss:0.00178	Train Accuracy:0.96875
+	Eval persuasion loss:0.02570	Eval Accuracy:0.46875
+Epoch: 21/30 | Time: 0m 27s
+	Train persuasion loss:0.00169	Train Accuracy:0.97204
+	Eval persuasion loss:0.02597	Eval Accuracy:0.45312
+Epoch: 22/30 | Time: 0m 28s
+	Train persuasion loss:0.00177	Train Accuracy:0.97039
+	Eval persuasion loss:0.02606	Eval Accuracy:0.46875
+Epoch: 23/30 | Time: 0m 24s
+	Train persuasion loss:0.00166	Train Accuracy:0.97368
+	Eval persuasion loss:0.02579	Eval Accuracy:0.46875
+Epoch: 24/30 | Time: 0m 22s
+	Train persuasion loss:0.00162	Train Accuracy:0.96875
+	Eval persuasion loss:0.02592	Eval Accuracy:0.45312
+Epoch: 25/30 | Time: 0m 26s
+	Train persuasion loss:0.00176	Train Accuracy:0.96217
+	Eval persuasion loss:0.02597	Eval Accuracy:0.46875
+Epoch: 26/30 | Time: 0m 27s
+	Train persuasion loss:0.00146	Train Accuracy:0.98026
+	Eval persuasion loss:0.02610	Eval Accuracy:0.46875
+Epoch: 27/30 | Time: 0m 25s
+	Train persuasion loss:0.00169	Train Accuracy:0.97039
+	Eval persuasion loss:0.02610	Eval Accuracy:0.48438
+Epoch: 28/30 | Time: 0m 23s
+	Train persuasion loss:0.00153	Train Accuracy:0.97039
+	Eval persuasion loss:0.02600	Eval Accuracy:0.46875
+Epoch: 29/30 | Time: 0m 24s
+	Train persuasion loss:0.00163	Train Accuracy:0.97368
+	Eval persuasion loss:0.02592	Eval Accuracy:0.48438
+Epoch: 30/30 | Time: 0m 27s
+	Train persuasion loss:0.00182	Train Accuracy:0.96217
+	Eval persuasion loss:0.02581	Eval Accuracy:0.48438
+FOLD 1
+Let's use 4 GPUs!
+Test persuasion loss:0.01741	Test Accuracy:0.53846
+MSE: 0.017
+FOLD 2
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02443	mini pers loss: 100000.00000	eval acc: 0.5260	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 21s
+	Train persuasion loss:0.02466	Train Accuracy:0.43015
+	Eval persuasion loss:0.02443	Eval Accuracy:0.52604
+Epoch: 02/30 | Time: 0m 24s
+	Train persuasion loss:0.02044	Train Accuracy:0.47794
+	Eval persuasion loss:0.02523	Eval Accuracy:0.42188
+Epoch: 03/30 | Time: 0m 23s
+	Train persuasion loss:0.01625	Train Accuracy:0.55882
+	Eval persuasion loss:0.02882	Eval Accuracy:0.42708
+Epoch: 04/30 | Time: 0m 25s
+	Train persuasion loss:0.01486	Train Accuracy:0.59191
+	Eval persuasion loss:0.02570	Eval Accuracy:0.48958
+Epoch: 05/30 | Time: 0m 26s
+	Train persuasion loss:0.01331	Train Accuracy:0.63787
+	Eval persuasion loss:0.03245	Eval Accuracy:0.50521
+[SAVE MODEL] eval pers loss: 0.03033	mini pers loss: 0.02443	eval acc: 0.5573	max acc: 0.5260
+Epoch: 06/30 | Time: 0m 25s
+	Train persuasion loss:0.01296	Train Accuracy:0.65809
+	Eval persuasion loss:0.03033	Eval Accuracy:0.55729
+[SAVE MODEL] eval pers loss: 0.02623	mini pers loss: 0.03033	eval acc: 0.5833	max acc: 0.5573
+Epoch: 07/30 | Time: 0m 25s
+	Train persuasion loss:0.01129	Train Accuracy:0.65993
+	Eval persuasion loss:0.02623	Eval Accuracy:0.58333
+Epoch: 08/30 | Time: 0m 22s
+	Train persuasion loss:0.00847	Train Accuracy:0.73346
+	Eval persuasion loss:0.02978	Eval Accuracy:0.44792
+[SAVE MODEL] eval pers loss: 0.02451	mini pers loss: 0.02623	eval acc: 0.5417	max acc: 0.5833
+Epoch: 09/30 | Time: 0m 27s
+	Train persuasion loss:0.00849	Train Accuracy:0.73897
+	Eval persuasion loss:0.02451	Eval Accuracy:0.54167
+Epoch: 10/30 | Time: 0m 28s
+	Train persuasion loss:0.00616	Train Accuracy:0.80882
+	Eval persuasion loss:0.02536	Eval Accuracy:0.54167
+Epoch: 11/30 | Time: 0m 28s
+	Train persuasion loss:0.00471	Train Accuracy:0.86949
+	Eval persuasion loss:0.02592	Eval Accuracy:0.51042
+Epoch: 12/30 | Time: 0m 22s
+	Train persuasion loss:0.00435	Train Accuracy:0.87684
+	Eval persuasion loss:0.02511	Eval Accuracy:0.53646
+Epoch: 13/30 | Time: 0m 26s
+	Train persuasion loss:0.00359	Train Accuracy:0.92279
+	Eval persuasion loss:0.02518	Eval Accuracy:0.49479
+Epoch: 14/30 | Time: 0m 29s
+	Train persuasion loss:0.00355	Train Accuracy:0.90809
+	Eval persuasion loss:0.02509	Eval Accuracy:0.53646
+Epoch: 15/30 | Time: 0m 25s
+	Train persuasion loss:0.00356	Train Accuracy:0.90993
+	Eval persuasion loss:0.02508	Eval Accuracy:0.52083
+Epoch: 16/30 | Time: 0m 28s
+	Train persuasion loss:0.00285	Train Accuracy:0.93199
+	Eval persuasion loss:0.02568	Eval Accuracy:0.49479
+Epoch: 17/30 | Time: 0m 25s
+	Train persuasion loss:0.00272	Train Accuracy:0.93382
+	Eval persuasion loss:0.02598	Eval Accuracy:0.47917
+Epoch: 18/30 | Time: 0m 24s
+	Train persuasion loss:0.00248	Train Accuracy:0.95037
+	Eval persuasion loss:0.02604	Eval Accuracy:0.47917
+Epoch: 19/30 | Time: 0m 26s
+	Train persuasion loss:0.00209	Train Accuracy:0.95221
+	Eval persuasion loss:0.02638	Eval Accuracy:0.49479
+Epoch: 20/30 | Time: 0m 24s
+	Train persuasion loss:0.00209	Train Accuracy:0.95956
+	Eval persuasion loss:0.02643	Eval Accuracy:0.47917
+Epoch: 21/30 | Time: 0m 24s
+	Train persuasion loss:0.00188	Train Accuracy:0.96507
+	Eval persuasion loss:0.02663	Eval Accuracy:0.47917
+Epoch: 22/30 | Time: 0m 24s
+	Train persuasion loss:0.00188	Train Accuracy:0.96875
+	Eval persuasion loss:0.02655	Eval Accuracy:0.43750
+Epoch: 23/30 | Time: 0m 25s
+	Train persuasion loss:0.00216	Train Accuracy:0.95404
+	Eval persuasion loss:0.02655	Eval Accuracy:0.49479
+Epoch: 24/30 | Time: 0m 22s
+	Train persuasion loss:0.00177	Train Accuracy:0.96507
+	Eval persuasion loss:0.02677	Eval Accuracy:0.43750
+Epoch: 25/30 | Time: 0m 25s
+	Train persuasion loss:0.00185	Train Accuracy:0.97243
+	Eval persuasion loss:0.02665	Eval Accuracy:0.43750
+Epoch: 26/30 | Time: 0m 24s
+	Train persuasion loss:0.00171	Train Accuracy:0.97243
+	Eval persuasion loss:0.02644	Eval Accuracy:0.49479
+Epoch: 27/30 | Time: 0m 25s
+	Train persuasion loss:0.00183	Train Accuracy:0.96691
+	Eval persuasion loss:0.02638	Eval Accuracy:0.49479
+Epoch: 28/30 | Time: 0m 24s
+	Train persuasion loss:0.00173	Train Accuracy:0.96691
+	Eval persuasion loss:0.02622	Eval Accuracy:0.49479
+Epoch: 29/30 | Time: 0m 23s
+	Train persuasion loss:0.00184	Train Accuracy:0.97059
+	Eval persuasion loss:0.02649	Eval Accuracy:0.49479
+Epoch: 30/30 | Time: 0m 23s
+	Train persuasion loss:0.00160	Train Accuracy:0.97426
+	Eval persuasion loss:0.02647	Eval Accuracy:0.47917
+FOLD 2
+Let's use 4 GPUs!
+Test persuasion loss:0.02457	Test Accuracy:0.48148
+MSE: 0.025
+FOLD 3
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02328	mini pers loss: 100000.00000	eval acc: 0.3309	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 19s
+	Train persuasion loss:0.02432	Train Accuracy:0.42188
+	Eval persuasion loss:0.02328	Eval Accuracy:0.33088
+Epoch: 02/30 | Time: 0m 16s
+	Train persuasion loss:0.02056	Train Accuracy:0.52812
+	Eval persuasion loss:0.02793	Eval Accuracy:0.21140
+Epoch: 03/30 | Time: 0m 22s
+	Train persuasion loss:0.01706	Train Accuracy:0.55859
+	Eval persuasion loss:0.02813	Eval Accuracy:0.20956
+Epoch: 04/30 | Time: 0m 18s
+	Train persuasion loss:0.01594	Train Accuracy:0.57461
+	Eval persuasion loss:0.02839	Eval Accuracy:0.24081
+Epoch: 05/30 | Time: 0m 23s
+	Train persuasion loss:0.01312	Train Accuracy:0.63867
+	Eval persuasion loss:0.02998	Eval Accuracy:0.31526
+Epoch: 06/30 | Time: 0m 21s
+	Train persuasion loss:0.01191	Train Accuracy:0.69805
+	Eval persuasion loss:0.02732	Eval Accuracy:0.27206
+Epoch: 07/30 | Time: 0m 16s
+	Train persuasion loss:0.00904	Train Accuracy:0.73828
+	Eval persuasion loss:0.02785	Eval Accuracy:0.28768
+Epoch: 08/30 | Time: 0m 14s
+	Train persuasion loss:0.00705	Train Accuracy:0.81211
+	Eval persuasion loss:0.02892	Eval Accuracy:0.27206
+Epoch: 09/30 | Time: 0m 19s
+	Train persuasion loss:0.00677	Train Accuracy:0.83945
+	Eval persuasion loss:0.02600	Eval Accuracy:0.31342
+Epoch: 10/30 | Time: 0m 23s
+	Train persuasion loss:0.00606	Train Accuracy:0.83906
+	Eval persuasion loss:0.02983	Eval Accuracy:0.28585
+Epoch: 11/30 | Time: 0m 22s
+	Train persuasion loss:0.00444	Train Accuracy:0.89805
+	Eval persuasion loss:0.02950	Eval Accuracy:0.31710
+Epoch: 12/30 | Time: 0m 15s
+	Train persuasion loss:0.00453	Train Accuracy:0.89961
+	Eval persuasion loss:0.02918	Eval Accuracy:0.31710
+Epoch: 13/30 | Time: 0m 21s
+	Train persuasion loss:0.00466	Train Accuracy:0.89727
+	Eval persuasion loss:0.02984	Eval Accuracy:0.31710
+[SAVE MODEL] eval pers loss: 0.02936	mini pers loss: 0.02328	eval acc: 0.3327	max acc: 0.3309
+Epoch: 14/30 | Time: 0m 19s
+	Train persuasion loss:0.00427	Train Accuracy:0.91328
+	Eval persuasion loss:0.02936	Eval Accuracy:0.33272
+[SAVE MODEL] eval pers loss: 0.02906	mini pers loss: 0.02936	eval acc: 0.3327	max acc: 0.3327
+Epoch: 15/30 | Time: 0m 20s
+	Train persuasion loss:0.00454	Train Accuracy:0.92461
+	Eval persuasion loss:0.02906	Eval Accuracy:0.33272
+[SAVE MODEL] eval pers loss: 0.02846	mini pers loss: 0.02906	eval acc: 0.2877	max acc: 0.3327
+Epoch: 16/30 | Time: 0m 17s
+	Train persuasion loss:0.00357	Train Accuracy:0.93281
+	Eval persuasion loss:0.02846	Eval Accuracy:0.28768
+[SAVE MODEL] eval pers loss: 0.02884	mini pers loss: 0.02846	eval acc: 0.3171	max acc: 0.2877
+Epoch: 17/30 | Time: 0m 20s
+	Train persuasion loss:0.00417	Train Accuracy:0.90273
+	Eval persuasion loss:0.02884	Eval Accuracy:0.31710
+[SAVE MODEL] eval pers loss: 0.02729	mini pers loss: 0.02884	eval acc: 0.2877	max acc: 0.3171
+Epoch: 18/30 | Time: 0m 23s
+	Train persuasion loss:0.00386	Train Accuracy:0.91992
+	Eval persuasion loss:0.02729	Eval Accuracy:0.28768
+[SAVE MODEL] eval pers loss: 0.02854	mini pers loss: 0.02729	eval acc: 0.3483	max acc: 0.2877
+Epoch: 19/30 | Time: 0m 18s
+	Train persuasion loss:0.00353	Train Accuracy:0.92891
+	Eval persuasion loss:0.02854	Eval Accuracy:0.34835
+[SAVE MODEL] eval pers loss: 0.02821	mini pers loss: 0.02854	eval acc: 0.3640	max acc: 0.3483
+Epoch: 20/30 | Time: 0m 23s
+	Train persuasion loss:0.00335	Train Accuracy:0.93281
+	Eval persuasion loss:0.02821	Eval Accuracy:0.36397
+Epoch: 21/30 | Time: 0m 19s
+	Train persuasion loss:0.00321	Train Accuracy:0.94648
+	Eval persuasion loss:0.02831	Eval Accuracy:0.33272
+Epoch: 22/30 | Time: 0m 23s
+	Train persuasion loss:0.00353	Train Accuracy:0.92891
+	Eval persuasion loss:0.02895	Eval Accuracy:0.36397
+Epoch: 23/30 | Time: 0m 16s
+	Train persuasion loss:0.00329	Train Accuracy:0.94258
+	Eval persuasion loss:0.02847	Eval Accuracy:0.34835
+Epoch: 24/30 | Time: 0m 23s
+	Train persuasion loss:0.00320	Train Accuracy:0.92188
+	Eval persuasion loss:0.02857	Eval Accuracy:0.34835
+Epoch: 25/30 | Time: 0m 23s
+	Train persuasion loss:0.00295	Train Accuracy:0.94453
+	Eval persuasion loss:0.02889	Eval Accuracy:0.36397
+Epoch: 26/30 | Time: 0m 23s
+	Train persuasion loss:0.00358	Train Accuracy:0.92188
+	Eval persuasion loss:0.02885	Eval Accuracy:0.31710
+Epoch: 27/30 | Time: 0m 19s
+	Train persuasion loss:0.00329	Train Accuracy:0.93398
+	Eval persuasion loss:0.02949	Eval Accuracy:0.34835
+Epoch: 28/30 | Time: 0m 18s
+	Train persuasion loss:0.00322	Train Accuracy:0.92813
+	Eval persuasion loss:0.02926	Eval Accuracy:0.36397
+Epoch: 29/30 | Time: 0m 25s
+	Train persuasion loss:0.00315	Train Accuracy:0.93633
+	Eval persuasion loss:0.02910	Eval Accuracy:0.34835
+Epoch: 30/30 | Time: 0m 22s
+	Train persuasion loss:0.00315	Train Accuracy:0.92852
+	Eval persuasion loss:0.02826	Eval Accuracy:0.34835
+FOLD 3
+Let's use 4 GPUs!
+Test persuasion loss:0.01743	Test Accuracy:0.52381
+MSE: 0.017
+FOLD 4
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.03700	mini pers loss: 100000.00000	eval acc: 0.3719	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 27s
+	Train persuasion loss:0.02428	Train Accuracy:0.45625
+	Eval persuasion loss:0.03700	Eval Accuracy:0.37188
+Epoch: 02/30 | Time: 0m 27s
+	Train persuasion loss:0.02058	Train Accuracy:0.51042
+	Eval persuasion loss:0.03963	Eval Accuracy:0.32188
+[SAVE MODEL] eval pers loss: 0.02547	mini pers loss: 0.03700	eval acc: 0.2875	max acc: 0.3719
+Epoch: 03/30 | Time: 0m 25s
+	Train persuasion loss:0.01768	Train Accuracy:0.55625
+	Eval persuasion loss:0.02547	Eval Accuracy:0.28750
+[SAVE MODEL] eval pers loss: 0.02717	mini pers loss: 0.02547	eval acc: 0.3344	max acc: 0.2875
+Epoch: 04/30 | Time: 0m 23s
+	Train persuasion loss:0.01553	Train Accuracy:0.59167
+	Eval persuasion loss:0.02717	Eval Accuracy:0.33438
+[SAVE MODEL] eval pers loss: 0.02684	mini pers loss: 0.02717	eval acc: 0.3375	max acc: 0.3344
+Epoch: 05/30 | Time: 0m 28s
+	Train persuasion loss:0.01408	Train Accuracy:0.61458
+	Eval persuasion loss:0.02684	Eval Accuracy:0.33750
+Epoch: 06/30 | Time: 0m 26s
+	Train persuasion loss:0.01057	Train Accuracy:0.68542
+	Eval persuasion loss:0.02913	Eval Accuracy:0.32188
+Epoch: 07/30 | Time: 0m 22s
+	Train persuasion loss:0.00871	Train Accuracy:0.72917
+	Eval persuasion loss:0.03482	Eval Accuracy:0.32188
+Epoch: 08/30 | Time: 0m 25s
+	Train persuasion loss:0.00845	Train Accuracy:0.78125
+	Eval persuasion loss:0.02949	Eval Accuracy:0.27188
+[SAVE MODEL] eval pers loss: 0.02642	mini pers loss: 0.02684	eval acc: 0.3188	max acc: 0.3375
+Epoch: 09/30 | Time: 0m 18s
+	Train persuasion loss:0.00854	Train Accuracy:0.78542
+	Eval persuasion loss:0.02642	Eval Accuracy:0.31875
+[SAVE MODEL] eval pers loss: 0.02425	mini pers loss: 0.02642	eval acc: 0.4000	max acc: 0.3188
+Epoch: 10/30 | Time: 0m 23s
+	Train persuasion loss:0.00730	Train Accuracy:0.78542
+	Eval persuasion loss:0.02425	Eval Accuracy:0.40000
+Epoch: 11/30 | Time: 0m 16s
+	Train persuasion loss:0.00654	Train Accuracy:0.82292
+	Eval persuasion loss:0.02509	Eval Accuracy:0.38750
+Epoch: 12/30 | Time: 0m 19s
+	Train persuasion loss:0.00565	Train Accuracy:0.85417
+	Eval persuasion loss:0.02745	Eval Accuracy:0.38750
+Epoch: 13/30 | Time: 0m 18s
+	Train persuasion loss:0.00472	Train Accuracy:0.87917
+	Eval persuasion loss:0.02738	Eval Accuracy:0.38750
+[SAVE MODEL] eval pers loss: 0.02644	mini pers loss: 0.02425	eval acc: 0.4031	max acc: 0.4000
+Epoch: 14/30 | Time: 0m 19s
+	Train persuasion loss:0.00478	Train Accuracy:0.88125
+	Eval persuasion loss:0.02644	Eval Accuracy:0.40313
+[SAVE MODEL] eval pers loss: 0.02585	mini pers loss: 0.02644	eval acc: 0.4500	max acc: 0.4031
+Epoch: 15/30 | Time: 0m 14s
+	Train persuasion loss:0.00415	Train Accuracy:0.88542
+	Eval persuasion loss:0.02585	Eval Accuracy:0.45000
+[SAVE MODEL] eval pers loss: 0.02544	mini pers loss: 0.02585	eval acc: 0.4188	max acc: 0.4500
+Epoch: 16/30 | Time: 0m 15s
+	Train persuasion loss:0.00482	Train Accuracy:0.88125
+	Eval persuasion loss:0.02544	Eval Accuracy:0.41875
+[SAVE MODEL] eval pers loss: 0.02625	mini pers loss: 0.02544	eval acc: 0.4344	max acc: 0.4188
+Epoch: 17/30 | Time: 0m 14s
+	Train persuasion loss:0.00460	Train Accuracy:0.87917
+	Eval persuasion loss:0.02625	Eval Accuracy:0.43438
+[SAVE MODEL] eval pers loss: 0.02604	mini pers loss: 0.02625	eval acc: 0.4031	max acc: 0.4344
+Epoch: 18/30 | Time: 0m 18s
+	Train persuasion loss:0.00368	Train Accuracy:0.90625
+	Eval persuasion loss:0.02604	Eval Accuracy:0.40313
+[SAVE MODEL] eval pers loss: 0.02539	mini pers loss: 0.02604	eval acc: 0.4188	max acc: 0.4031
+Epoch: 19/30 | Time: 0m 23s
+	Train persuasion loss:0.00369	Train Accuracy:0.92500
+	Eval persuasion loss:0.02539	Eval Accuracy:0.41875
+[SAVE MODEL] eval pers loss: 0.02609	mini pers loss: 0.02539	eval acc: 0.4688	max acc: 0.4188
+Epoch: 20/30 | Time: 0m 16s
+	Train persuasion loss:0.00375	Train Accuracy:0.91042
+	Eval persuasion loss:0.02609	Eval Accuracy:0.46875
+[SAVE MODEL] eval pers loss: 0.02577	mini pers loss: 0.02609	eval acc: 0.4531	max acc: 0.4688
+Epoch: 21/30 | Time: 0m 16s
+	Train persuasion loss:0.00367	Train Accuracy:0.90208
+	Eval persuasion loss:0.02577	Eval Accuracy:0.45312
+[SAVE MODEL] eval pers loss: 0.02512	mini pers loss: 0.02577	eval acc: 0.4531	max acc: 0.4531
+Epoch: 22/30 | Time: 0m 19s
+	Train persuasion loss:0.00340	Train Accuracy:0.92292
+	Eval persuasion loss:0.02512	Eval Accuracy:0.45312
+Epoch: 23/30 | Time: 0m 15s
+	Train persuasion loss:0.00406	Train Accuracy:0.91458
+	Eval persuasion loss:0.02567	Eval Accuracy:0.45312
+Epoch: 24/30 | Time: 0m 18s
+	Train persuasion loss:0.00328	Train Accuracy:0.92917
+	Eval persuasion loss:0.02583	Eval Accuracy:0.45312
+Epoch: 25/30 | Time: 0m 15s
+	Train persuasion loss:0.00349	Train Accuracy:0.90417
+	Eval persuasion loss:0.02566	Eval Accuracy:0.45312
+Epoch: 26/30 | Time: 0m 22s
+	Train persuasion loss:0.00324	Train Accuracy:0.92083
+	Eval persuasion loss:0.02573	Eval Accuracy:0.45312
+Epoch: 27/30 | Time: 0m 20s
+	Train persuasion loss:0.00325	Train Accuracy:0.91250
+	Eval persuasion loss:0.02576	Eval Accuracy:0.45312
+Epoch: 28/30 | Time: 0m 23s
+	Train persuasion loss:0.00323	Train Accuracy:0.93750
+	Eval persuasion loss:0.02521	Eval Accuracy:0.45312
+Epoch: 29/30 | Time: 0m 23s
+	Train persuasion loss:0.00312	Train Accuracy:0.92708
+	Eval persuasion loss:0.02593	Eval Accuracy:0.45312
+Epoch: 30/30 | Time: 0m 21s
+	Train persuasion loss:0.00386	Train Accuracy:0.90417
+	Eval persuasion loss:0.02546	Eval Accuracy:0.45312
+FOLD 4
+Let's use 4 GPUs!
+Test persuasion loss:0.03107	Test Accuracy:0.26087
+MSE: 0.031
+FOLD 5
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02561	mini pers loss: 100000.00000	eval acc: 0.3031	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 18s
+	Train persuasion loss:0.02687	Train Accuracy:0.41669
+	Eval persuasion loss:0.02561	Eval Accuracy:0.30313
+[SAVE MODEL] eval pers loss: 0.02065	mini pers loss: 0.02561	eval acc: 0.3344	max acc: 0.3031
+Epoch: 02/30 | Time: 0m 16s
+	Train persuasion loss:0.01949	Train Accuracy:0.54269
+	Eval persuasion loss:0.02065	Eval Accuracy:0.33438
+[SAVE MODEL] eval pers loss: 0.01924	mini pers loss: 0.02065	eval acc: 0.4188	max acc: 0.3344
+Epoch: 03/30 | Time: 0m 13s
+	Train persuasion loss:0.01731	Train Accuracy:0.55637
+	Eval persuasion loss:0.01924	Eval Accuracy:0.41875
+[SAVE MODEL] eval pers loss: 0.01739	mini pers loss: 0.01924	eval acc: 0.6344	max acc: 0.4188
+Epoch: 04/30 | Time: 0m 17s
+	Train persuasion loss:0.01244	Train Accuracy:0.65807
+	Eval persuasion loss:0.01739	Eval Accuracy:0.63438
+[SAVE MODEL] eval pers loss: 0.01513	mini pers loss: 0.01739	eval acc: 0.4563	max acc: 0.6344
+Epoch: 05/30 | Time: 0m 19s
+	Train persuasion loss:0.01092	Train Accuracy:0.69247
+	Eval persuasion loss:0.01513	Eval Accuracy:0.45625
+Epoch: 06/30 | Time: 0m 20s
+	Train persuasion loss:0.00918	Train Accuracy:0.76028
+	Eval persuasion loss:0.02073	Eval Accuracy:0.44063
+[SAVE MODEL] eval pers loss: 0.01496	mini pers loss: 0.01513	eval acc: 0.4406	max acc: 0.4563
+Epoch: 07/30 | Time: 0m 18s
+	Train persuasion loss:0.00879	Train Accuracy:0.76194
+	Eval persuasion loss:0.01496	Eval Accuracy:0.44063
+Epoch: 08/30 | Time: 0m 17s
+	Train persuasion loss:0.00707	Train Accuracy:0.80960
+	Eval persuasion loss:0.02489	Eval Accuracy:0.30938
+[SAVE MODEL] eval pers loss: 0.01924	mini pers loss: 0.01496	eval acc: 0.4563	max acc: 0.4406
+Epoch: 09/30 | Time: 0m 21s
+	Train persuasion loss:0.00518	Train Accuracy:0.86820
+	Eval persuasion loss:0.01924	Eval Accuracy:0.45625
+Epoch: 10/30 | Time: 0m 16s
+	Train persuasion loss:0.00463	Train Accuracy:0.89324
+	Eval persuasion loss:0.02015	Eval Accuracy:0.37188
+Epoch: 11/30 | Time: 0m 20s
+	Train persuasion loss:0.00398	Train Accuracy:0.90766
+	Eval persuasion loss:0.02062	Eval Accuracy:0.44063
+Epoch: 12/30 | Time: 0m 17s
+	Train persuasion loss:0.00326	Train Accuracy:0.92764
+	Eval persuasion loss:0.02121	Eval Accuracy:0.32500
+[SAVE MODEL] eval pers loss: 0.01985	mini pers loss: 0.01924	eval acc: 0.5250	max acc: 0.4563
+Epoch: 13/30 | Time: 0m 15s
+	Train persuasion loss:0.00310	Train Accuracy:0.93725
+	Eval persuasion loss:0.01985	Eval Accuracy:0.52500
+Epoch: 14/30 | Time: 0m 17s
+	Train persuasion loss:0.00260	Train Accuracy:0.96320
+	Eval persuasion loss:0.02044	Eval Accuracy:0.40938
+Epoch: 15/30 | Time: 0m 21s
+	Train persuasion loss:0.00265	Train Accuracy:0.95648
+	Eval persuasion loss:0.02113	Eval Accuracy:0.32500
+Epoch: 16/30 | Time: 0m 17s
+	Train persuasion loss:0.00211	Train Accuracy:0.97596
+	Eval persuasion loss:0.02052	Eval Accuracy:0.32500
+Epoch: 17/30 | Time: 0m 16s
+	Train persuasion loss:0.00211	Train Accuracy:0.97546
+	Eval persuasion loss:0.02043	Eval Accuracy:0.42500
+Epoch: 18/30 | Time: 0m 20s
+	Train persuasion loss:0.00211	Train Accuracy:0.97356
+	Eval persuasion loss:0.02145	Eval Accuracy:0.42500
+Epoch: 19/30 | Time: 0m 18s
+	Train persuasion loss:0.00195	Train Accuracy:0.97596
+	Eval persuasion loss:0.02107	Eval Accuracy:0.32500
+Epoch: 20/30 | Time: 0m 19s
+	Train persuasion loss:0.00187	Train Accuracy:0.97812
+	Eval persuasion loss:0.02158	Eval Accuracy:0.32500
+Epoch: 21/30 | Time: 0m 20s
+	Train persuasion loss:0.00198	Train Accuracy:0.97066
+	Eval persuasion loss:0.02181	Eval Accuracy:0.32500
+Epoch: 22/30 | Time: 0m 21s
+	Train persuasion loss:0.00203	Train Accuracy:0.98052
+	Eval persuasion loss:0.02245	Eval Accuracy:0.34063
+Epoch: 23/30 | Time: 0m 21s
+	Train persuasion loss:0.00180	Train Accuracy:0.98077
+	Eval persuasion loss:0.02254	Eval Accuracy:0.34063
+Epoch: 24/30 | Time: 0m 21s
+	Train persuasion loss:0.00191	Train Accuracy:0.98989
+	Eval persuasion loss:0.02221	Eval Accuracy:0.34063
+Epoch: 25/30 | Time: 0m 23s
+	Train persuasion loss:0.00175	Train Accuracy:0.98077
+	Eval persuasion loss:0.02220	Eval Accuracy:0.32500
+Epoch: 26/30 | Time: 0m 26s
+	Train persuasion loss:0.00160	Train Accuracy:0.98077
+	Eval persuasion loss:0.02232	Eval Accuracy:0.34063
+Epoch: 27/30 | Time: 0m 20s
+	Train persuasion loss:0.00168	Train Accuracy:0.98077
+	Eval persuasion loss:0.02232	Eval Accuracy:0.32500
+Epoch: 28/30 | Time: 0m 19s
+	Train persuasion loss:0.00175	Train Accuracy:0.98077
+	Eval persuasion loss:0.02214	Eval Accuracy:0.32500
+Epoch: 29/30 | Time: 0m 22s
+	Train persuasion loss:0.00163	Train Accuracy:0.98268
+	Eval persuasion loss:0.02213	Eval Accuracy:0.32500
+Epoch: 30/30 | Time: 0m 19s
+	Train persuasion loss:0.00176	Train Accuracy:0.98292
+	Eval persuasion loss:0.02250	Eval Accuracy:0.32500
+FOLD 5
+Let's use 4 GPUs!
+Test persuasion loss:0.02553	Test Accuracy:0.38462
+MSE: 0.026
+FOLD 6
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02974	mini pers loss: 100000.00000	eval acc: 0.3281	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 17s
+	Train persuasion loss:0.02726	Train Accuracy:0.40180
+	Eval persuasion loss:0.02974	Eval Accuracy:0.32812
+[SAVE MODEL] eval pers loss: 0.04265	mini pers loss: 0.02974	eval acc: 0.3438	max acc: 0.3281
+Epoch: 02/30 | Time: 0m 16s
+	Train persuasion loss:0.02419	Train Accuracy:0.47522
+	Eval persuasion loss:0.04265	Eval Accuracy:0.34375
+[SAVE MODEL] eval pers loss: 0.11361	mini pers loss: 0.04265	eval acc: 0.4688	max acc: 0.3438
+Epoch: 03/30 | Time: 0m 15s
+	Train persuasion loss:0.01871	Train Accuracy:0.52251
+	Eval persuasion loss:0.11361	Eval Accuracy:0.46875
+[SAVE MODEL] eval pers loss: 0.08055	mini pers loss: 0.11361	eval acc: 0.5156	max acc: 0.4688
+Epoch: 04/30 | Time: 0m 13s
+	Train persuasion loss:0.01532	Train Accuracy:0.57686
+	Eval persuasion loss:0.08055	Eval Accuracy:0.51562
+[SAVE MODEL] eval pers loss: 0.07032	mini pers loss: 0.08055	eval acc: 0.3594	max acc: 0.5156
+Epoch: 05/30 | Time: 0m 17s
+	Train persuasion loss:0.01215	Train Accuracy:0.67364
+	Eval persuasion loss:0.07032	Eval Accuracy:0.35938
+[SAVE MODEL] eval pers loss: 0.08119	mini pers loss: 0.07032	eval acc: 0.3906	max acc: 0.3594
+Epoch: 06/30 | Time: 0m 17s
+	Train persuasion loss:0.01007	Train Accuracy:0.71321
+	Eval persuasion loss:0.08119	Eval Accuracy:0.39062
+[SAVE MODEL] eval pers loss: 0.06197	mini pers loss: 0.08119	eval acc: 0.4531	max acc: 0.3906
+Epoch: 07/30 | Time: 0m 18s
+	Train persuasion loss:0.00914	Train Accuracy:0.75202
+	Eval persuasion loss:0.06197	Eval Accuracy:0.45312
+[SAVE MODEL] eval pers loss: 0.05956	mini pers loss: 0.06197	eval acc: 0.3594	max acc: 0.4531
+Epoch: 08/30 | Time: 0m 17s
+	Train persuasion loss:0.00859	Train Accuracy:0.76504
+	Eval persuasion loss:0.05956	Eval Accuracy:0.35938
+[SAVE MODEL] eval pers loss: 0.06918	mini pers loss: 0.05956	eval acc: 0.4688	max acc: 0.3594
+Epoch: 09/30 | Time: 0m 18s
+	Train persuasion loss:0.00663	Train Accuracy:0.82754
+	Eval persuasion loss:0.06918	Eval Accuracy:0.46875
+[SAVE MODEL] eval pers loss: 0.06692	mini pers loss: 0.06918	eval acc: 0.4844	max acc: 0.4688
+Epoch: 10/30 | Time: 0m 12s
+	Train persuasion loss:0.00579	Train Accuracy:0.86148
+	Eval persuasion loss:0.06692	Eval Accuracy:0.48438
+[SAVE MODEL] eval pers loss: 0.06107	mini pers loss: 0.06692	eval acc: 0.4844	max acc: 0.4844
+Epoch: 11/30 | Time: 0m 17s
+	Train persuasion loss:0.00494	Train Accuracy:0.89306
+	Eval persuasion loss:0.06107	Eval Accuracy:0.48438
+Epoch: 12/30 | Time: 0m 14s
+	Train persuasion loss:0.00460	Train Accuracy:0.89315
+	Eval persuasion loss:0.06156	Eval Accuracy:0.45312
+Epoch: 13/30 | Time: 0m 16s
+	Train persuasion loss:0.00420	Train Accuracy:0.89819
+	Eval persuasion loss:0.06264	Eval Accuracy:0.45312
+Epoch: 14/30 | Time: 0m 18s
+	Train persuasion loss:0.00363	Train Accuracy:0.92171
+	Eval persuasion loss:0.06556	Eval Accuracy:0.45312
+Epoch: 15/30 | Time: 0m 18s
+	Train persuasion loss:0.00328	Train Accuracy:0.92683
+	Eval persuasion loss:0.06809	Eval Accuracy:0.45312
+Epoch: 16/30 | Time: 0m 15s
+	Train persuasion loss:0.00343	Train Accuracy:0.92683
+	Eval persuasion loss:0.06709	Eval Accuracy:0.45312
+Epoch: 17/30 | Time: 0m 18s
+	Train persuasion loss:0.00332	Train Accuracy:0.92960
+	Eval persuasion loss:0.06886	Eval Accuracy:0.45312
+Epoch: 18/30 | Time: 0m 17s
+	Train persuasion loss:0.00287	Train Accuracy:0.95556
+	Eval persuasion loss:0.06920	Eval Accuracy:0.43750
+Epoch: 19/30 | Time: 0m 15s
+	Train persuasion loss:0.00272	Train Accuracy:0.96077
+	Eval persuasion loss:0.06969	Eval Accuracy:0.43750
+Epoch: 20/30 | Time: 0m 17s
+	Train persuasion loss:0.00283	Train Accuracy:0.94775
+	Eval persuasion loss:0.06962	Eval Accuracy:0.42188
+Epoch: 21/30 | Time: 0m 19s
+	Train persuasion loss:0.00269	Train Accuracy:0.94531
+	Eval persuasion loss:0.06957	Eval Accuracy:0.42188
+Epoch: 22/30 | Time: 0m 16s
+	Train persuasion loss:0.00254	Train Accuracy:0.95825
+	Eval persuasion loss:0.07034	Eval Accuracy:0.39062
+Epoch: 23/30 | Time: 0m 18s
+	Train persuasion loss:0.00298	Train Accuracy:0.94783
+	Eval persuasion loss:0.07073	Eval Accuracy:0.43750
+Epoch: 24/30 | Time: 0m 16s
+	Train persuasion loss:0.00249	Train Accuracy:0.96354
+	Eval persuasion loss:0.07205	Eval Accuracy:0.40625
+Epoch: 25/30 | Time: 0m 19s
+	Train persuasion loss:0.00233	Train Accuracy:0.96875
+	Eval persuasion loss:0.07273	Eval Accuracy:0.43750
+Epoch: 26/30 | Time: 0m 19s
+	Train persuasion loss:0.00221	Train Accuracy:0.96337
+	Eval persuasion loss:0.07360	Eval Accuracy:0.40625
+Epoch: 27/30 | Time: 0m 17s
+	Train persuasion loss:0.00242	Train Accuracy:0.95825
+	Eval persuasion loss:0.07460	Eval Accuracy:0.42188
+Epoch: 28/30 | Time: 0m 14s
+	Train persuasion loss:0.00230	Train Accuracy:0.95044
+	Eval persuasion loss:0.07449	Eval Accuracy:0.42188
+Epoch: 29/30 | Time: 0m 17s
+	Train persuasion loss:0.00226	Train Accuracy:0.96094
+	Eval persuasion loss:0.07398	Eval Accuracy:0.42188
+Epoch: 30/30 | Time: 0m 20s
+	Train persuasion loss:0.00213	Train Accuracy:0.95833
+	Eval persuasion loss:0.07449	Eval Accuracy:0.40625
+FOLD 6
+Let's use 4 GPUs!
+Test persuasion loss:0.02046	Test Accuracy:0.43750
+MSE: 0.02
+FOLD 7
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.03189	mini pers loss: 100000.00000	eval acc: 0.1562	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 18s
+	Train persuasion loss:0.02940	Train Accuracy:0.43508
+	Eval persuasion loss:0.03189	Eval Accuracy:0.15625
+[SAVE MODEL] eval pers loss: 0.01556	mini pers loss: 0.03189	eval acc: 0.4062	max acc: 0.1562
+Epoch: 02/30 | Time: 0m 19s
+	Train persuasion loss:0.02406	Train Accuracy:0.46138
+	Eval persuasion loss:0.01556	Eval Accuracy:0.40625
+Epoch: 03/30 | Time: 0m 17s
+	Train persuasion loss:0.01971	Train Accuracy:0.54661
+	Eval persuasion loss:0.01601	Eval Accuracy:0.37500
+[SAVE MODEL] eval pers loss: 0.01293	mini pers loss: 0.01556	eval acc: 0.3438	max acc: 0.4062
+Epoch: 04/30 | Time: 0m 17s
+	Train persuasion loss:0.01758	Train Accuracy:0.58923
+	Eval persuasion loss:0.01293	Eval Accuracy:0.34375
+[SAVE MODEL] eval pers loss: 0.01507	mini pers loss: 0.01293	eval acc: 0.4688	max acc: 0.3438
+Epoch: 05/30 | Time: 0m 20s
+	Train persuasion loss:0.01551	Train Accuracy:0.57965
+	Eval persuasion loss:0.01507	Eval Accuracy:0.46875
+[SAVE MODEL] eval pers loss: 0.01087	mini pers loss: 0.01507	eval acc: 0.6250	max acc: 0.4688
+Epoch: 06/30 | Time: 0m 18s
+	Train persuasion loss:0.01068	Train Accuracy:0.67298
+	Eval persuasion loss:0.01087	Eval Accuracy:0.62500
+Epoch: 07/30 | Time: 0m 18s
+	Train persuasion loss:0.00850	Train Accuracy:0.76052
+	Eval persuasion loss:0.01627	Eval Accuracy:0.40625
+Epoch: 08/30 | Time: 0m 19s
+	Train persuasion loss:0.00697	Train Accuracy:0.80808
+	Eval persuasion loss:0.01187	Eval Accuracy:0.59375
+Epoch: 09/30 | Time: 0m 20s
+	Train persuasion loss:0.00658	Train Accuracy:0.79566
+	Eval persuasion loss:0.01519	Eval Accuracy:0.40625
+Epoch: 10/30 | Time: 0m 16s
+	Train persuasion loss:0.00469	Train Accuracy:0.85690
+	Eval persuasion loss:0.01257	Eval Accuracy:0.59375
+Epoch: 11/30 | Time: 0m 19s
+	Train persuasion loss:0.00386	Train Accuracy:0.89457
+	Eval persuasion loss:0.01463	Eval Accuracy:0.50000
+Epoch: 12/30 | Time: 0m 17s
+	Train persuasion loss:0.00356	Train Accuracy:0.92635
+	Eval persuasion loss:0.01428	Eval Accuracy:0.50000
+Epoch: 13/30 | Time: 0m 18s
+	Train persuasion loss:0.00305	Train Accuracy:0.92277
+	Eval persuasion loss:0.01348	Eval Accuracy:0.56250
+Epoch: 14/30 | Time: 0m 18s
+	Train persuasion loss:0.00282	Train Accuracy:0.93077
+	Eval persuasion loss:0.01444	Eval Accuracy:0.50000
+Epoch: 15/30 | Time: 0m 17s
+	Train persuasion loss:0.00258	Train Accuracy:0.94160
+	Eval persuasion loss:0.01417	Eval Accuracy:0.46875
+Epoch: 16/30 | Time: 0m 20s
+	Train persuasion loss:0.00258	Train Accuracy:0.93981
+	Eval persuasion loss:0.01442	Eval Accuracy:0.53125
+Epoch: 17/30 | Time: 0m 19s
+	Train persuasion loss:0.00233	Train Accuracy:0.95865
+	Eval persuasion loss:0.01405	Eval Accuracy:0.46875
+Epoch: 18/30 | Time: 0m 15s
+	Train persuasion loss:0.00223	Train Accuracy:0.95402
+	Eval persuasion loss:0.01416	Eval Accuracy:0.50000
+Epoch: 19/30 | Time: 0m 21s
+	Train persuasion loss:0.00193	Train Accuracy:0.95349
+	Eval persuasion loss:0.01494	Eval Accuracy:0.46875
+Epoch: 20/30 | Time: 0m 20s
+	Train persuasion loss:0.00214	Train Accuracy:0.96254
+	Eval persuasion loss:0.01364	Eval Accuracy:0.50000
+Epoch: 21/30 | Time: 0m 20s
+	Train persuasion loss:0.00207	Train Accuracy:0.95686
+	Eval persuasion loss:0.01418	Eval Accuracy:0.53125
+Epoch: 22/30 | Time: 0m 24s
+	Train persuasion loss:0.00182	Train Accuracy:0.96591
+	Eval persuasion loss:0.01450	Eval Accuracy:0.50000
+Epoch: 23/30 | Time: 0m 15s
+	Train persuasion loss:0.00185	Train Accuracy:0.96591
+	Eval persuasion loss:0.01463	Eval Accuracy:0.50000
+Epoch: 24/30 | Time: 0m 16s
+	Train persuasion loss:0.00183	Train Accuracy:0.96307
+	Eval persuasion loss:0.01440	Eval Accuracy:0.50000
+Epoch: 25/30 | Time: 0m 24s
+	Train persuasion loss:0.00234	Train Accuracy:0.95581
+	Eval persuasion loss:0.01458	Eval Accuracy:0.50000
+Epoch: 26/30 | Time: 0m 19s
+	Train persuasion loss:0.00188	Train Accuracy:0.97443
+	Eval persuasion loss:0.01440	Eval Accuracy:0.50000
+Epoch: 27/30 | Time: 0m 16s
+	Train persuasion loss:0.00189	Train Accuracy:0.95633
+	Eval persuasion loss:0.01417	Eval Accuracy:0.50000
+Epoch: 28/30 | Time: 0m 19s
+	Train persuasion loss:0.00193	Train Accuracy:0.96202
+	Eval persuasion loss:0.01404	Eval Accuracy:0.53125
+Epoch: 29/30 | Time: 0m 18s
+	Train persuasion loss:0.00183	Train Accuracy:0.97285
+	Eval persuasion loss:0.01400	Eval Accuracy:0.53125
+Epoch: 30/30 | Time: 0m 22s
+	Train persuasion loss:0.00177	Train Accuracy:0.97159
+	Eval persuasion loss:0.01432	Eval Accuracy:0.50000
+FOLD 7
+Let's use 4 GPUs!
+Test persuasion loss:0.01956	Test Accuracy:0.52381
+MSE: 0.02
+FOLD 8
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.02157	mini pers loss: 100000.00000	eval acc: 0.1938	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 15s
+	Train persuasion loss:0.02809	Train Accuracy:0.45018
+	Eval persuasion loss:0.02157	Eval Accuracy:0.19375
+[SAVE MODEL] eval pers loss: 0.01945	mini pers loss: 0.02157	eval acc: 0.3031	max acc: 0.1938
+Epoch: 02/30 | Time: 0m 15s
+	Train persuasion loss:0.02057	Train Accuracy:0.50956
+	Eval persuasion loss:0.01945	Eval Accuracy:0.30313
+Epoch: 03/30 | Time: 0m 18s
+	Train persuasion loss:0.01750	Train Accuracy:0.56507
+	Eval persuasion loss:0.02742	Eval Accuracy:0.25625
+Epoch: 04/30 | Time: 0m 13s
+	Train persuasion loss:0.01539	Train Accuracy:0.64835
+	Eval persuasion loss:0.03570	Eval Accuracy:0.14062
+Epoch: 05/30 | Time: 0m 17s
+	Train persuasion loss:0.01287	Train Accuracy:0.70184
+	Eval persuasion loss:0.04075	Eval Accuracy:0.17188
+Epoch: 06/30 | Time: 0m 14s
+	Train persuasion loss:0.00960	Train Accuracy:0.74320
+	Eval persuasion loss:0.03498	Eval Accuracy:0.18750
+Epoch: 07/30 | Time: 0m 17s
+	Train persuasion loss:0.00764	Train Accuracy:0.82574
+	Eval persuasion loss:0.03636	Eval Accuracy:0.15625
+Epoch: 08/30 | Time: 0m 14s
+	Train persuasion loss:0.00653	Train Accuracy:0.83658
+	Eval persuasion loss:0.03150	Eval Accuracy:0.18750
+Epoch: 09/30 | Time: 0m 16s
+	Train persuasion loss:0.00610	Train Accuracy:0.85386
+	Eval persuasion loss:0.04101	Eval Accuracy:0.24063
+Epoch: 10/30 | Time: 0m 16s
+	Train persuasion loss:0.00603	Train Accuracy:0.86121
+	Eval persuasion loss:0.03325	Eval Accuracy:0.27188
+Epoch: 11/30 | Time: 0m 15s
+	Train persuasion loss:0.00449	Train Accuracy:0.88824
+	Eval persuasion loss:0.03383	Eval Accuracy:0.25625
+Epoch: 12/30 | Time: 0m 15s
+	Train persuasion loss:0.00434	Train Accuracy:0.91048
+	Eval persuasion loss:0.03468	Eval Accuracy:0.25625
+Epoch: 13/30 | Time: 0m 15s
+	Train persuasion loss:0.00426	Train Accuracy:0.91397
+	Eval persuasion loss:0.03594	Eval Accuracy:0.25625
+Epoch: 14/30 | Time: 0m 17s
+	Train persuasion loss:0.00389	Train Accuracy:0.91324
+	Eval persuasion loss:0.03620	Eval Accuracy:0.17188
+Epoch: 15/30 | Time: 0m 13s
+	Train persuasion loss:0.00408	Train Accuracy:0.91783
+	Eval persuasion loss:0.03629	Eval Accuracy:0.17188
+Epoch: 16/30 | Time: 0m 17s
+	Train persuasion loss:0.00390	Train Accuracy:0.92886
+	Eval persuasion loss:0.03860	Eval Accuracy:0.25625
+Epoch: 17/30 | Time: 0m 14s
+	Train persuasion loss:0.00363	Train Accuracy:0.94173
+	Eval persuasion loss:0.03772	Eval Accuracy:0.27188
+Epoch: 18/30 | Time: 0m 12s
+	Train persuasion loss:0.00348	Train Accuracy:0.93309
+	Eval persuasion loss:0.03717	Eval Accuracy:0.27188
+Epoch: 19/30 | Time: 0m 14s
+	Train persuasion loss:0.00363	Train Accuracy:0.92886
+	Eval persuasion loss:0.03690	Eval Accuracy:0.17188
+Epoch: 20/30 | Time: 0m 17s
+	Train persuasion loss:0.00300	Train Accuracy:0.95110
+	Eval persuasion loss:0.03701	Eval Accuracy:0.27188
+Epoch: 21/30 | Time: 0m 17s
+	Train persuasion loss:0.00316	Train Accuracy:0.94522
+	Eval persuasion loss:0.03733	Eval Accuracy:0.27188
+Epoch: 22/30 | Time: 0m 20s
+	Train persuasion loss:0.00294	Train Accuracy:0.95974
+	Eval persuasion loss:0.03792	Eval Accuracy:0.27188
+Epoch: 23/30 | Time: 0m 12s
+	Train persuasion loss:0.00326	Train Accuracy:0.95974
+	Eval persuasion loss:0.03813	Eval Accuracy:0.17188
+Epoch: 24/30 | Time: 0m 14s
+	Train persuasion loss:0.00311	Train Accuracy:0.96360
+	Eval persuasion loss:0.03830	Eval Accuracy:0.17188
+Epoch: 25/30 | Time: 0m 17s
+	Train persuasion loss:0.00339	Train Accuracy:0.96011
+	Eval persuasion loss:0.03843	Eval Accuracy:0.27188
+Epoch: 26/30 | Time: 0m 14s
+	Train persuasion loss:0.00270	Train Accuracy:0.96636
+	Eval persuasion loss:0.03857	Eval Accuracy:0.27188
+Epoch: 27/30 | Time: 0m 14s
+	Train persuasion loss:0.00305	Train Accuracy:0.96011
+	Eval persuasion loss:0.03849	Eval Accuracy:0.17188
+Epoch: 28/30 | Time: 0m 17s
+	Train persuasion loss:0.00285	Train Accuracy:0.95974
+	Eval persuasion loss:0.03851	Eval Accuracy:0.17188
+Epoch: 29/30 | Time: 0m 11s
+	Train persuasion loss:0.00287	Train Accuracy:0.95662
+	Eval persuasion loss:0.03839	Eval Accuracy:0.17188
+Epoch: 30/30 | Time: 0m 15s
+	Train persuasion loss:0.00275	Train Accuracy:0.96562
+	Eval persuasion loss:0.03862	Eval Accuracy:0.17188
+FOLD 8
+Let's use 4 GPUs!
+Test persuasion loss:0.01514	Test Accuracy:0.66667
+MSE: 0.015
+FOLD 9
+Let's use 4 GPUs!
+[SAVE MODEL] eval pers loss: 0.08333	mini pers loss: 100000.00000	eval acc: 0.1094	max acc: 0.0000
+Epoch: 01/30 | Time: 0m 16s
+	Train persuasion loss:0.02401	Train Accuracy:0.52431
+	Eval persuasion loss:0.08333	Eval Accuracy:0.10938
+[SAVE MODEL] eval pers loss: 0.13320	mini pers loss: 0.08333	eval acc: 0.1250	max acc: 0.1094
+Epoch: 02/30 | Time: 0m 18s
+	Train persuasion loss:0.02148	Train Accuracy:0.50852
+	Eval persuasion loss:0.13320	Eval Accuracy:0.12500
+[SAVE MODEL] eval pers loss: 0.12520	mini pers loss: 0.13320	eval acc: 0.1406	max acc: 0.1250
+Epoch: 03/30 | Time: 0m 15s
+	Train persuasion loss:0.01890	Train Accuracy:0.54261
+	Eval persuasion loss:0.12520	Eval Accuracy:0.14062
+[SAVE MODEL] eval pers loss: 0.02866	mini pers loss: 0.12520	eval acc: 0.1719	max acc: 0.1406
+Epoch: 04/30 | Time: 0m 12s
+	Train persuasion loss:0.01434	Train Accuracy:0.55682
+	Eval persuasion loss:0.02866	Eval Accuracy:0.17188
+[SAVE MODEL] eval pers loss: 0.02190	mini pers loss: 0.02866	eval acc: 0.6719	max acc: 0.1719
+Epoch: 05/30 | Time: 0m 16s
+	Train persuasion loss:0.01181	Train Accuracy:0.66067
+	Eval persuasion loss:0.02190	Eval Accuracy:0.67188
+[SAVE MODEL] eval pers loss: 0.02476	mini pers loss: 0.02190	eval acc: 0.6875	max acc: 0.6719
+Epoch: 06/30 | Time: 0m 12s
+	Train persuasion loss:0.01012	Train Accuracy:0.70234
+	Eval persuasion loss:0.02476	Eval Accuracy:0.68750
+Epoch: 07/30 | Time: 0m 16s
+	Train persuasion loss:0.00848	Train Accuracy:0.72317
+	Eval persuasion loss:0.03719	Eval Accuracy:0.20312
+[SAVE MODEL] eval pers loss: 0.02410	mini pers loss: 0.02476	eval acc: 0.6875	max acc: 0.6875
+Epoch: 08/30 | Time: 0m 12s
+	Train persuasion loss:0.00733	Train Accuracy:0.74021
+	Eval persuasion loss:0.02410	Eval Accuracy:0.68750
+[SAVE MODEL] eval pers loss: 0.02255	mini pers loss: 0.02410	eval acc: 0.6719	max acc: 0.6875
+Epoch: 09/30 | Time: 0m 12s
+	Train persuasion loss:0.00642	Train Accuracy:0.80240
+	Eval persuasion loss:0.02255	Eval Accuracy:0.67188
+[SAVE MODEL] eval pers loss: 0.02371	mini pers loss: 0.02255	eval acc: 0.6875	max acc: 0.6719
+Epoch: 10/30 | Time: 0m 15s
+	Train persuasion loss:0.00625	Train Accuracy:0.81850
+	Eval persuasion loss:0.02371	Eval Accuracy:0.68750
+[SAVE MODEL] eval pers loss: 0.02303	mini pers loss: 0.02371	eval acc: 0.6875	max acc: 0.6875
+Epoch: 11/30 | Time: 0m 14s
+	Train persuasion loss:0.00520	Train Accuracy:0.82386
+	Eval persuasion loss:0.02303	Eval Accuracy:0.68750
+[SAVE MODEL] eval pers loss: 0.01955	mini pers loss: 0.02303	eval acc: 0.6719	max acc: 0.6875
+Epoch: 12/30 | Time: 0m 12s
+	Train persuasion loss:0.00404	Train Accuracy:0.89804
+	Eval persuasion loss:0.01955	Eval Accuracy:0.67188
+[SAVE MODEL] eval pers loss: 0.01893	mini pers loss: 0.01955	eval acc: 0.7031	max acc: 0.6719
+Epoch: 13/30 | Time: 0m 18s
+	Train persuasion loss:0.00373	Train Accuracy:0.88384
+	Eval persuasion loss:0.01893	Eval Accuracy:0.70312
+Epoch: 14/30 | Time: 0m 11s
+	Train persuasion loss:0.00359	Train Accuracy:0.89804
+	Eval persuasion loss:0.01908	Eval Accuracy:0.70312
+[SAVE MODEL] eval pers loss: 0.01890	mini pers loss: 0.01893	eval acc: 0.7031	max acc: 0.7031
+Epoch: 15/30 | Time: 0m 19s
+	Train persuasion loss:0.00350	Train Accuracy:0.92235
+	Eval persuasion loss:0.01890	Eval Accuracy:0.70312
+[SAVE MODEL] eval pers loss: 0.01874	mini pers loss: 0.01890	eval acc: 0.7031	max acc: 0.7031
+Epoch: 16/30 | Time: 0m 15s
+	Train persuasion loss:0.00318	Train Accuracy:0.90183
+	Eval persuasion loss:0.01874	Eval Accuracy:0.70312
+Epoch: 17/30 | Time: 0m 11s
+	Train persuasion loss:0.00287	Train Accuracy:0.92740
+	Eval persuasion loss:0.01994	Eval Accuracy:0.70312
+Epoch: 18/30 | Time: 0m 15s
+	Train persuasion loss:0.00236	Train Accuracy:0.94823
+	Eval persuasion loss:0.02003	Eval Accuracy:0.70312
+Epoch: 19/30 | Time: 0m 16s
+	Train persuasion loss:0.00271	Train Accuracy:0.92582
+	Eval persuasion loss:0.02005	Eval Accuracy:0.70312
+Epoch: 20/30 | Time: 0m 12s
+	Train persuasion loss:0.00277	Train Accuracy:0.94476
+	Eval persuasion loss:0.02093	Eval Accuracy:0.70312
+Epoch: 21/30 | Time: 0m 15s
+	Train persuasion loss:0.00206	Train Accuracy:0.96023
+	Eval persuasion loss:0.02114	Eval Accuracy:0.70312
+Epoch: 22/30 | Time: 0m 13s
+	Train persuasion loss:0.00225	Train Accuracy:0.93939
+	Eval persuasion loss:0.02119	Eval Accuracy:0.70312
+Epoch: 23/30 | Time: 0m 18s
+	Train persuasion loss:0.00240	Train Accuracy:0.93813
+	Eval persuasion loss:0.02137	Eval Accuracy:0.70312
+Epoch: 24/30 | Time: 0m 12s
+	Train persuasion loss:0.00201	Train Accuracy:0.96370
+	Eval persuasion loss:0.02193	Eval Accuracy:0.70312
+Epoch: 25/30 | Time: 0m 17s
+	Train persuasion loss:0.00200	Train Accuracy:0.97064
+	Eval persuasion loss:0.02169	Eval Accuracy:0.70312
+Epoch: 26/30 | Time: 0m 14s
+	Train persuasion loss:0.00214	Train Accuracy:0.94287
+	Eval persuasion loss:0.02142	Eval Accuracy:0.70312
+Epoch: 27/30 | Time: 0m 16s
+	Train persuasion loss:0.00189	Train Accuracy:0.96559
+	Eval persuasion loss:0.02165	Eval Accuracy:0.70312
+Epoch: 28/30 | Time: 0m 18s
+	Train persuasion loss:0.00189	Train Accuracy:0.95518
+	Eval persuasion loss:0.02147	Eval Accuracy:0.70312
+Epoch: 29/30 | Time: 0m 21s
+	Train persuasion loss:0.00212	Train Accuracy:0.97064
+	Eval persuasion loss:0.02163	Eval Accuracy:0.70312
+Epoch: 30/30 | Time: 0m 18s
+	Train persuasion loss:0.00206	Train Accuracy:0.96023
+	Eval persuasion loss:0.02159	Eval Accuracy:0.70312
+FOLD 9
+Let's use 4 GPUs!
+Test persuasion loss:0.02039	Test Accuracy:0.23529
+MSE: 0.02
