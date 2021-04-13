@@ -38,14 +38,16 @@ class LatentModel(nn.Module):
             self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=34, stride=9)
         self.bn = nn.BatchNorm1d(self.d)
         self.relu = F.relu
+        self.ln = nn.LayerNorm(self.d)
 
     def forward(self, src):
         # Input:    src(N, S, E)
         # Output:   out(N, u, d)
         x = src.permute(0, 2, 1)    # pytorch是对最后一维做卷积的, 因此需要把S换到最后
         x = self.conv1(x)
-        x = self.relu(self.bn(x))
-        out = x.permute(0, 2, 1)
+        #x = self.relu(self.bn(x))
+        #out = x.permute(0, 2, 1)
+        out = self.ln(x.permute(0, 2, 1))
         return out
 
 # 1 - Bi-Attention
@@ -116,8 +118,8 @@ class TriAttnModel(nn.Module):
         # 浅层融合的双模态信息矩阵
         F_av, F_al, F_vl = torch.cat([F_a, F_v], dim=2), torch.cat([F_a, F_l], dim=2), torch.cat([F_v, F_l], dim=2)
         F_av = self.relu(self.fc1(F_av))
-        F_al = self.relu(self.fc1(F_al))
-        F_vl = self.relu(self.fc1(F_vl))
+        F_al = self.relu(self.fc2(F_al))
+        F_vl = self.relu(self.fc3(F_vl))
         # 三模态融合特征
         attn_lav = self.TriAttn(F_l, F_av)
         attn_val = self.TriAttn(F_v, F_al)

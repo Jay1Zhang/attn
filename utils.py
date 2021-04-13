@@ -5,7 +5,7 @@ import os
 import torch
 import torch.nn as nn
 import numpy as np
-from scipy.special import softmax
+from sklearn.metrics import r2_score
 
 # file path
 FOLDS_DIR = './folds_split/'    # folds directory
@@ -24,13 +24,13 @@ GAMMA = 0.2     # loss_final = L_pers + GAMMA * L_align
 ALPHA = 0.5     # update rate for modality weights
 BETA = 50       # weight in the softmax function for modality weights
 
-N_EPOCHS = 30   # master training procedure (alg 1 in paper)
+N_EPOCHS = 40   # master training procedure (alg 1 in paper)
 
 # optimizer
-LR = 1e-4
+LR = 1e-3
 W_DECAY = 1e-5      # L2正则系数
 STEP_SIZE = 10
-SCHE_GAMMA = 0.1
+SCHE_GAMMA = 0.2
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
@@ -92,8 +92,16 @@ def calcAccuracy(y_pred, y_true):
     return acc
 
 
+def calcR2Score(y_pred, y_true):
+    if y_pred[0] == 1:
+        return 0.5
+    #y_true = torch.unsqueeze(y_true, dim=1)
+    y_pred = y_pred[:, 0]
+    return r2_score(y_true.cpu().detach(), y_pred.cpu().detach())
+
+
 def calcPersLoss(pred, target):
-    criterion = nn.MSELoss()
+    criterion = nn.MSELoss()    # input: (N), (N)
     return criterion(pred[:, 0], target)
 
 

@@ -39,12 +39,13 @@ def fit_m2p2(m2p2_models, MODS, sample_batched):
     tri_attn_emb = m2p2_models['tri_attn'](latent_emb_mod)
     meta_emb = gen_meta_emb(sample_batched)
 
-    y_pred = m2p2_models['pers'](latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb)
-    y_true = sample_batched['ed_vote'].float().to(device)
+    y_pred = m2p2_models['pers'](latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb)   # (N, 1)
+    y_true = sample_batched['ed_vote'].float().to(device)   # (N)
 
     # calc loss
     loss_pers = calcPersLoss(y_pred, y_true)
-    acc = calcAccuracy(y_pred, y_true)
+    #acc = calcAccuracy(y_pred, y_true)
+    acc = calcR2Score(y_pred, y_true)
 
     return loss_pers, acc
 
@@ -59,7 +60,7 @@ def train_m2p2(m2p2_models, MODS, iterator, optimizer, scheduler):
         # forward
         loss, acc = fit_m2p2(m2p2_models, MODS, sample_batched)
         total_loss += loss.item()
-        total_acc += acc.item()
+        total_acc += acc#.item()
 
         # backward
         loss.backward()
@@ -79,7 +80,7 @@ def eval_m2p2(m2p2_models, MODS, iterator):
         with torch.no_grad():
             loss, acc = fit_m2p2(m2p2_models, MODS, sample_batched)
             total_loss += loss.item()
-            total_acc += acc.item()
+            total_acc += acc#.item()
 
     return total_loss / (i_batch+1), total_acc / (i_batch + 1)    # mean
 
