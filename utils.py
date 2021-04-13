@@ -93,11 +93,14 @@ def calcAccuracy(y_pred, y_true):
 
 
 def calcR2Score(y_pred, y_true):
-    if y_pred[0] == 1:
-        return 0.5
-    #y_true = torch.unsqueeze(y_true, dim=1)
+    if y_pred.size()[0] == 1:
+        return 0.2
     y_pred = y_pred[:, 0]
-    return r2_score(y_true.cpu().detach(), y_pred.cpu().detach())
+    criterion = nn.MSELoss()
+    mse = criterion(y_pred, y_true)
+    var = y_true.var()
+    r2 = 1 - mse / var
+    return r2
 
 
 def calcPersLoss(pred, target):
