@@ -14,10 +14,10 @@ if __name__ == '__main__':
     # 0 - Configure arguments parser
     parser = argparse.ArgumentParser()
 
-    parser.add_argument('--fd', required=False, default=4, type=int, help='fold id')
+    parser.add_argument('--fd', required=False, default=9, type=int, help='fold id')
     parser.add_argument('--mod', required=False, default='avl', type=str,
                         help='modalities: a,v,l, or any combination of them')
-    parser.add_argument('--dp', required=False, default=0.4, type=float, help='dropout')
+    parser.add_argument('--dp', required=False, default=0.2, type=float, help='dropout')
 
     ## boolean flags
     parser.add_argument('--test_mode', default=False, action='store_true',
@@ -95,11 +95,11 @@ if __name__ == '__main__':
             if VERBOSE:
                 epoch_mins, epoch_secs = calc_epoch_time(start_time, end_time)
                 print(f'Epoch: {epoch + 1:02}/{N_EPOCHS} | Time: {epoch_mins}m {epoch_secs}s')
-                print(f'\tTrain persuasion loss:{train_loss_pers:.5f}\tTrain Accuracy:{train_acc:.5f}')
-                print(f'\tEval persuasion loss:{eval_loss_pers:.5f}\tEval Accuracy:{eval_acc:.5f}')
+                print(f'\tTrain persuasion loss:{train_loss_pers:.5f}\tTrain MAE Loss:{train_acc:.5f}')
+                print(f'\tEval persuasion loss:{eval_loss_pers:.5f}\tEval MAE Loss:{eval_acc:.5f}')
         #### Master Procedure End ####
     else:
         m2p2_models = loadModel(FOLD, m2p2_models)
         test_loss_pers, test_acc = eval_m2p2(m2p2_models, MODS, tes_loader)
-        print(f'Test persuasion loss:{test_loss_pers:.5f}\tTest Accuracy:{test_acc:.5f}')
+        print(f'Test persuasion loss:{test_loss_pers:.5f}\tTest MAE Loss:{test_acc:.5f}')
         print('MSE:', round(test_loss_pers, 3))

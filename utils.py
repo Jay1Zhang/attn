@@ -103,6 +103,11 @@ def calcR2Score(y_pred, y_true):
     return r2
 
 
+def calcMAE(y_pred, y_true):
+    mae = nn.L1Loss()
+    return mae(y_pred[:, 0], y_true)
+
+
 def calcPersLoss(pred, target):
     criterion = nn.MSELoss()    # input: (N), (N)
     return criterion(pred[:, 0], target)
