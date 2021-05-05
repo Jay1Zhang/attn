@@ -27,15 +27,15 @@ class InputEmb(nn.Module):
         if mod == 'a':
             self.seq_len = 220
             self.feat_dim = 73
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=28, stride=3)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
         elif mod == 'v':
             self.seq_len = 350
             self.feat_dim = 512
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=30, stride=5)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
         else:
             self.seq_len = 610
             self.feat_dim = 200
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=34, stride=9)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
 
         # self.dropout = nn.Dropout(dropout)
         self.bn = nn.BatchNorm1d(self.d)
