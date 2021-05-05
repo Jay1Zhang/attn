@@ -17,7 +17,7 @@ if __name__ == '__main__':
     parser.add_argument('--fd', required=False, default=9, type=int, help='fold id')
     parser.add_argument('--mod', required=False, default='avl', type=str,
                         help='modalities: a,v,l, or any combination of them')
-    parser.add_argument('--dp', required=False, default=0.2, type=float, help='dropout')
+    parser.add_argument('--dp', required=False, default=0.4, type=float, help='dropout')
 
     ## boolean flags
     parser.add_argument('--test_mode', default=False, action='store_true',
@@ -61,11 +61,11 @@ if __name__ == '__main__':
     m2p2_optim = optim.Adam(m2p2_params, lr=LR, weight_decay=W_DECAY)
     m2p2_scheduler = optim.lr_scheduler.StepLR(m2p2_optim, step_size=STEP_SIZE, gamma=SCHE_GAMMA)
 
-    #if VERBOSE:
-    #   print('####### total m2p2 hyper-parameters ', count_hyper_params(m2p2_params))
-    #   for k, v in m2p2_models.items():
-    #       print(v)
-    #       print(count_hyper_params(v.parameters()))
+    if VERBOSE:
+      print('####### total m2p2 hyper-parameters ', count_hyper_params(m2p2_params))
+      for k, v in m2p2_models.items():
+          print(v)
+          print(count_hyper_params(v.parameters()))
 
     # 3 - Initialize concat weights: w_a, w_v, w_l
     # weight_mod = {mod: 1. / len(MODS) for mod in MODS}

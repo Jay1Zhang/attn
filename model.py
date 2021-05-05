@@ -125,11 +125,57 @@ class LatentModel(nn.Module):
         # out = torch.max(seq, dim=0)[0]    # (N, d)
         return out.transpose(0, 1)
 
+# 2 - Cross Transformer
+class CrossAttnModel(nn.Module):
+    def __init__(self, dropout=0.4):
+        super(CrossAttnModel, self).__init__()
+        self.d = 32
+        self.ln_alpha = nn.LayerNorm(self.d)
+        self.ln_beta = nn.LayerNorm(self.d)
+        self.weightQ = nn.Linear(self.d, self.d, bias=False)
+        self.weightK = nn.Linear(self.d, self.d, bias=False)
+        self.weightV = nn.Linear(self.d, self.d, bias=False)
+        self.ln = nn.LayerNorm(self.d)
+        # position-wise feed forward
+        self.fc1 = nn.Linear(self.d, 4*self.d)
+        self.fc2 = nn.Linear(4*self.d, self.d)
+        self.dropout = nn.Dropout(dropout)
+
+    # Input:    alpha , beta (N, u, d)
+    # Output:   CCA-Bi(N, u, d)
+    def forward(self, z_alpha, z_beta):
+        z_alpha, z_beta = self.ln_alpha(z_alpha), self.ln_beta(z_beta)
+        # self-attn
+        residual = z_alpha
+        Q = self.weightQ(z_alpha)
+        K = self.weightK(z_beta)
+        V = self.weightV(z_beta)
+        attn = torch.bmm(Q, K.transpose(1, 2)) #/ torch.sqrt(torch.tensor(self.d))
+        attn = F.softmax(attn, dim=-1)
+        #attn = F.dropout(attn, p=self.attn_dropout) # dropout
+        z_attn = torch.bmm(attn, V)
+        z_attn = self.ln(residual + z_attn)
+        # position-wise ffn
+        residual = z_attn
+        z = self.fc2(F.relu(self.fc1(z_attn)))
+        z = self.dropout(z)
+        z += residual
+        return z
+
+
+
 # 2 - Bi-Attention
 class BiAttnModel(nn.Module):
-    def __init__(self):
+    def __init__(self, dropout=0.4):
         super(BiAttnModel, self).__init__()
         self.d = 32
+        self.trans_a_with_v = CrossAttnModel(dropout)
+        self.trans_a_with_l = CrossAttnModel(dropout)
+        self.trans_v_with_a = CrossAttnModel(dropout)
+        self.trans_v_with_l = CrossAttnModel(dropout)
+        self.trans_l_with_a = CrossAttnModel(dropout)
+        self.trans_l_with_v = CrossAttnModel(dropout)
+
         self.fc1 = nn.Linear(2*self.d, 2*self.d)
         self.tanh = torch.tanh
         self.fc2 = nn.Linear(2*self.d, 1, bias=False)
@@ -142,17 +188,26 @@ class BiAttnModel(nn.Module):
     # Output:   CCA-Bi(N, u, 2d)
     def forward(self, latent_emb_mod):
         a_emb, v_emb, l_emb = latent_emb_mod['a'], latent_emb_mod['v'], latent_emb_mod['l']
-        attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
-        u = a_emb.size()[1]
-        CCA = []
-        for i in range(u):
-            Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
-            Ci = self.fc2(self.tanh(self.fc1(Bi)))
-            alpha = self.softmax(Ci, dim=0)
-            CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
-            CCA.append(CCA_i)
-        CCA = torch.cat(CCA, dim=1)
-        return CCA
+        z_v2a, z_l2a = self.trans_a_with_v(a_emb, v_emb), self.trans_a_with_l(a_emb, l_emb)
+        attnA = torch.cat([z_v2a, z_l2a], dim=2)
+        z_a2v, z_l2v = self.trans_v_with_a(v_emb, a_emb), self.trans_v_with_l(v_emb, l_emb)
+        attnV = torch.cat([z_a2v, z_l2v], dim=2)
+        z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
+        attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
+        bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
+        return bi_attn
+
+        # attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
+        # u = a_emb.size()[1]
+        # CCA = []
+        # for i in range(u):
+        #     Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
+        #     Ci = self.fc2(self.tanh(self.fc1(Bi)))
+        #     alpha = self.softmax(Ci, dim=0)
+        #     CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
+        #     CCA.append(CCA_i)
+        # CCA = torch.cat(CCA, dim=1)
+        # return CCA
 
     def BiAttn(self, feat1, feat2):
         # Input:    feat1, feat2 (N, u, d)
@@ -209,7 +264,7 @@ class TriAttnModel(nn.Module):
         # 跨模态信息矩阵, (u, u)
         C1 = torch.matmul(F1, F23.transpose(1, 2))
         # 注意力分布, (u, u)
-        P1 = self.softmax(C1, dim=1)
+        P1 = self.softmax(C1, dim=-1)
         # 交互注意力表征信息, (u, d)
         T1 = torch.matmul(P1, F1)
         # 三模态融合信息, (u, d)
@@ -223,7 +278,7 @@ class PersModel(nn.Module):
         super(PersModel, self).__init__()
 
         # input: latent_emb emb (nmod * nfeat), bi_attn_emb (2 * nfeat), tri_attn_emb (3 * nfeat), debate meta-data (1)
-        ninp = (nmod + 2 + 3) * nfeat + 2
+        ninp = (nmod + 2) * nfeat + 2
         nout = 1
         self.fc1 = nn.Linear(ninp, 2 * ninp)
         self.dropout = nn.Dropout(dropout)
@@ -233,8 +288,9 @@ class PersModel(nn.Module):
     def forward(self, latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb):
         latent_emb = torch.cat([torch.mean(emb, dim=1) for emb in latent_emb_mod.values()], dim=1)
         bi_attn_emb = torch.mean(bi_attn_emb, dim=1)
-        tri_attn_emb = torch.mean(tri_attn_emb, dim=1)
-        x = torch.cat([latent_emb, bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
+        # tri_attn_emb = torch.mean(tri_attn_emb, dim=1)
+        x = torch.cat([latent_emb, bi_attn_emb, meta_emb], dim=1)
+        # x = torch.cat([latent_emb, bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         x = self.fc1(x)
         x = F.relu(self.dropout(x))
         x = self.fc2(x)
