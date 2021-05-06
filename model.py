@@ -198,16 +198,16 @@ class BiAttnModel(nn.Module):
         #return bi_attn
 
         attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
-        # u = a_emb.size()[1]
-        # CCA = []
-        # for i in range(u):
-        #     Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
-        #     Ci = self.fc2(self.tanh(self.fc1(Bi)))
-        #     alpha = self.softmax(Ci, dim=0)
-        #     CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
-        #     CCA.append(CCA_i)
-        # CCA = torch.cat(CCA, dim=1)
-        CCA = torch.cat([attnAV, attnAL, attnVL], dim=1)   # 3u x 2d
+        u = a_emb.size()[1]
+        CCA = []
+        for i in range(u):
+             Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
+             Ci = self.fc2(self.tanh(self.fc1(Bi)))
+             alpha = self.softmax(Ci, dim=0)
+             CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
+             CCA.append(CCA_i)
+        CCA = torch.cat(CCA, dim=1) # u x 2d
+        #CCA = torch.cat([attnAV, attnAL, attnVL], dim=1)   # 3u x 2d
         return CCA
 
     def BiAttn(self, feat1, feat2):
@@ -279,7 +279,7 @@ class PersModel(nn.Module):
         super(PersModel, self).__init__()
 
         # input: latent_emb emb (nmod * nfeat), bi_attn_emb (2 * nfeat), tri_attn_emb (3 * nfeat), debate meta-data (1)
-        ninp = (2) * nfeat + 2
+        ninp = (2 + 1) * nfeat + 2
         nout = 1
         self.fc1 = nn.Linear(ninp, 2 * ninp)
         self.dropout = nn.Dropout(dropout)
@@ -289,8 +289,8 @@ class PersModel(nn.Module):
     def forward(self, latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb):
         latent_emb = torch.cat([torch.mean(emb, dim=1) for emb in latent_emb_mod.values()], dim=1)
         bi_attn_emb = torch.mean(bi_attn_emb, dim=1)
-        # tri_attn_emb = torch.mean(tri_attn_emb, dim=1)
-        x = torch.cat([bi_attn_emb, meta_emb], dim=1)
+        tri_attn_emb = torch.mean(tri_attn_emb, dim=1)
+        x = torch.cat([bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         # x = torch.cat([latent_emb, bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         x = self.fc1(x)
         x = F.relu(self.dropout(x))
