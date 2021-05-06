@@ -30,7 +30,7 @@ N_EPOCHS = 40   # master training procedure (alg 1 in paper)
 # optimizer
 LR = 1e-3
 W_DECAY = 1e-5      # L2正则系数
-STEP_SIZE = 10
+STEP_SIZE = 20
 SCHE_GAMMA = 0.2
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')

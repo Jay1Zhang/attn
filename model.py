@@ -279,7 +279,7 @@ class PersModel(nn.Module):
         super(PersModel, self).__init__()
 
         # input: latent_emb emb (nmod * nfeat), bi_attn_emb (2 * nfeat), tri_attn_emb (3 * nfeat), debate meta-data (1)
-        ninp = (2 + 1) * nfeat + 2
+        ninp = (2 + 3) * nfeat + 2
         nout = 1
         self.fc1 = nn.Linear(ninp, 2 * ninp)
         self.dropout = nn.Dropout(dropout)
@@ -288,8 +288,8 @@ class PersModel(nn.Module):
 
     def forward(self, latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb):
         latent_emb = torch.cat([torch.mean(emb, dim=1) for emb in latent_emb_mod.values()], dim=1)
-        bi_attn_emb = torch.mean(bi_attn_emb, dim=1)
-        tri_attn_emb = torch.mean(tri_attn_emb, dim=1)
+        bi_attn_emb = torch.max(bi_attn_emb, dim=1)[0]
+        tri_attn_emb = torch.max(tri_attn_emb, dim=1)[0]
         x = torch.cat([bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         # x = torch.cat([latent_emb, bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         x = self.fc1(x)
