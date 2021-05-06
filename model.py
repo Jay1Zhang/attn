@@ -27,15 +27,15 @@ class InputEmb(nn.Module):
         if mod == 'a':
             self.seq_len = 220
             self.feat_dim = 73
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=28, stride=3)
         elif mod == 'v':
             self.seq_len = 350
             self.feat_dim = 512
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=30, stride=5)
         else:
             self.seq_len = 610
             self.feat_dim = 200
-            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=1, stride=1)
+            self.conv1 = nn.Conv1d(in_channels=self.feat_dim, out_channels=self.d, kernel_size=34, stride=9)
 
         # self.dropout = nn.Dropout(dropout)
         self.bn = nn.BatchNorm1d(self.d)
@@ -188,16 +188,16 @@ class BiAttnModel(nn.Module):
     # Output:   CCA-Bi(N, u, 2d)
     def forward(self, latent_emb_mod):
         a_emb, v_emb, l_emb = latent_emb_mod['a'], latent_emb_mod['v'], latent_emb_mod['l']
-        z_v2a, z_l2a = self.trans_a_with_v(a_emb, v_emb), self.trans_a_with_l(a_emb, l_emb)
-        attnA = torch.cat([z_v2a, z_l2a], dim=2)
-        z_a2v, z_l2v = self.trans_v_with_a(v_emb, a_emb), self.trans_v_with_l(v_emb, l_emb)
-        attnV = torch.cat([z_a2v, z_l2v], dim=2)
-        z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
-        attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
-        bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
-        return bi_attn
+        #z_v2a, z_l2a = self.trans_a_with_v(a_emb, v_emb), self.trans_a_with_l(a_emb, l_emb)
+        #attnA = torch.cat([z_v2a, z_l2a], dim=2)
+        #z_a2v, z_l2v = self.trans_v_with_a(v_emb, a_emb), self.trans_v_with_l(v_emb, l_emb)
+        #attnV = torch.cat([z_a2v, z_l2v], dim=2)
+        #z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
+        #attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
+        #bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
+        #return bi_attn
 
-        # attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
+        attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
         # u = a_emb.size()[1]
         # CCA = []
         # for i in range(u):
@@ -207,7 +207,8 @@ class BiAttnModel(nn.Module):
         #     CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
         #     CCA.append(CCA_i)
         # CCA = torch.cat(CCA, dim=1)
-        # return CCA
+        CCA = torch.cat([attnAV, attnAL, attnVL], dim=1)   # 3u x 2d
+        return CCA
 
     def BiAttn(self, feat1, feat2):
         # Input:    feat1, feat2 (N, u, d)
