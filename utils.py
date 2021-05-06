@@ -2,6 +2,7 @@
 # -*- coding:utf-8 -*-
 
 import os
+os.environ["CUDA_VISIBLE_DEVICES"] = "6"
 import torch
 import torch.nn as nn
 import numpy as np
