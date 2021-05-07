@@ -33,7 +33,7 @@ if __name__ == '__main__':
     TEST_MODE = args.test_mode
     VERBOSE = args.verbose
     #TEST_MODE = True
-    #VERBOSE = True
+    VERBOSE = True
     print("FOLD", FOLD)
 
     #############
@@ -82,7 +82,7 @@ if __name__ == '__main__':
             train_loss_pers, train_acc = train_m2p2(m2p2_models, MODS, tra_loader, m2p2_optim, m2p2_scheduler)
             # eval and save m2p2 model
             eval_loss_pers, eval_acc = eval_m2p2(m2p2_models, MODS, val_loader)
-            if eval_loss_pers < min_loss_pers or eval_acc > max_acc:
+            if eval_loss_pers < min_loss_pers:
                 print(f'[SAVE MODEL] eval pers loss: {eval_loss_pers:.5f}\tmini pers loss: {min_loss_pers:.5f}'
                       f'\teval acc: {eval_acc:.4f}\tmax_acc: {max_acc:.4f}')
                 min_loss_pers = eval_loss_pers

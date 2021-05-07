@@ -163,18 +163,31 @@ class CrossAttnModel(nn.Module):
         return z
 
 
+class CrossTransModel(nn.Module):
+    def __init__(self, nlayers=4, dropout=0.4):
+        super(CrossTransModel, self).__init__()
+        self.nlayers = int(nlayers)
+        self.cross_attn = []
+        for i in range(self.nlayers):
+            self.cross_attn.append(CrossAttnModel(dropout))
+
+    def forward(self, z_alpha, z_beta):
+        for i in range(self.nlayers):
+            z_alpha = self.cross_attn[i](z_alpha, z_beta)
+        return z_alpha
+
 
 # 2 - Bi-Attention
 class BiAttnModel(nn.Module):
     def __init__(self, dropout=0.4):
         super(BiAttnModel, self).__init__()
         self.d = 32
-        self.trans_a_with_v = CrossAttnModel(dropout)
-        self.trans_a_with_l = CrossAttnModel(dropout)
-        self.trans_v_with_a = CrossAttnModel(dropout)
-        self.trans_v_with_l = CrossAttnModel(dropout)
-        self.trans_l_with_a = CrossAttnModel(dropout)
-        self.trans_l_with_v = CrossAttnModel(dropout)
+        self.trans_a_with_v = CrossTransModel(dropout)
+        self.trans_a_with_l = CrossTransModel(dropout)
+        self.trans_v_with_a = CrossTransModel(dropout)
+        self.trans_v_with_l = CrossTransModel(dropout)
+        self.trans_l_with_a = CrossTransModel(dropout)
+        self.trans_l_with_v = CrossTransModel(dropout)
 
         self.fc1 = nn.Linear(2*self.d, 2*self.d)
         self.tanh = torch.tanh
@@ -194,20 +207,21 @@ class BiAttnModel(nn.Module):
         attnV = torch.cat([z_a2v, z_l2v], dim=2)
         z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
         attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
-        bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
-        return bi_attn
+        #bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
+        #return bi_attn
+        attnAV, attnAL, attnVL = attnA, attnV, attnL
 
         # attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
-        # u = a_emb.size()[1]
-        # CCA = []
-        # for i in range(u):
-        #     Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
-        #     Ci = self.fc2(self.tanh(self.fc1(Bi)))
-        #     alpha = self.softmax(Ci, dim=0)
-        #     CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
-        #     CCA.append(CCA_i)
-        # CCA = torch.cat(CCA, dim=1)
-        # return CCA
+        u = a_emb.size()[1]
+        CCA = []
+        for i in range(u):
+            Bi = torch.cat([attnAV[:, 0:1, :], attnAL[:, 0:1, :], attnVL[:, 0:1, :]], dim=1)
+            Ci = self.fc2(self.tanh(self.fc1(Bi)))
+            alpha = self.softmax(Ci, dim=0)
+            CCA_i = torch.matmul(alpha.transpose(1, 2), Bi)
+            CCA.append(CCA_i)
+        CCA = torch.cat(CCA, dim=1)
+        return CCA
 
     def BiAttn(self, feat1, feat2):
         # Input:    feat1, feat2 (N, u, d)

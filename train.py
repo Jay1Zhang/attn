@@ -36,7 +36,8 @@ def fit_m2p2(m2p2_models, MODS, sample_batched):
         latent_emb_mod[mod] = m2p2_models[mod](sample_batched[f'{mod}_data'].to(device))
 
     bi_attn_emb = m2p2_models['bi_attn'](latent_emb_mod)
-    tri_attn_emb = m2p2_models['tri_attn'](latent_emb_mod)
+    #tri_attn_emb = m2p2_models['tri_attn'](latent_emb_mod)
+    tri_attn_emb = None
     meta_emb = gen_meta_emb(sample_batched)
 
     y_pred = m2p2_models['pers'](latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb)   # (N, 1)
