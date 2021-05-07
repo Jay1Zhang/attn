@@ -188,16 +188,17 @@ class BiAttnModel(nn.Module):
     # Output:   CCA-Bi(N, u, 2d)
     def forward(self, latent_emb_mod):
         a_emb, v_emb, l_emb = latent_emb_mod['a'], latent_emb_mod['v'], latent_emb_mod['l']
-        #z_v2a, z_l2a = self.trans_a_with_v(a_emb, v_emb), self.trans_a_with_l(a_emb, l_emb)
-        #attnA = torch.cat([z_v2a, z_l2a], dim=2)
-        #z_a2v, z_l2v = self.trans_v_with_a(v_emb, a_emb), self.trans_v_with_l(v_emb, l_emb)
-        #attnV = torch.cat([z_a2v, z_l2v], dim=2)
-        #z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
-        #attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
-        #bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
-        #return bi_attn
+        z_v2a, z_l2a = self.trans_a_with_v(a_emb, v_emb), self.trans_a_with_l(a_emb, l_emb)
+        attnA = torch.cat([z_v2a, z_l2a], dim=2)
+        z_a2v, z_l2v = self.trans_v_with_a(v_emb, a_emb), self.trans_v_with_l(v_emb, l_emb)
+        attnV = torch.cat([z_a2v, z_l2v], dim=2)
+        z_a2l, z_v2l = self.trans_l_with_a(l_emb, a_emb), self.trans_l_with_v(l_emb, v_emb)
+        attnL = torch.cat([z_a2l, z_v2l], dim=2)    # u x 2d
+        attnAV, attnAL, attnVL = attnA, attnV, attnL
+        # bi_attn = torch.cat([attnA, attnV, attnL], dim=1)   # 3u x 2d
+        # return bi_attn
 
-        attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
+        # attnAV, attnAL, attnVL = self.BiAttn(a_emb, v_emb), self.BiAttn(a_emb, l_emb), self.BiAttn(v_emb, l_emb)
         u = a_emb.size()[1]
         CCA = []
         for i in range(u):
@@ -279,7 +280,7 @@ class PersModel(nn.Module):
         super(PersModel, self).__init__()
 
         # input: latent_emb emb (nmod * nfeat), bi_attn_emb (2 * nfeat), tri_attn_emb (3 * nfeat), debate meta-data (1)
-        ninp = (2 + 3) * nfeat + 2
+        ninp = (2) * nfeat + 2
         nout = 1
         self.fc1 = nn.Linear(ninp, 2 * ninp)
         self.dropout = nn.Dropout(dropout)
@@ -289,8 +290,8 @@ class PersModel(nn.Module):
     def forward(self, latent_emb_mod, bi_attn_emb, tri_attn_emb, meta_emb):
         latent_emb = torch.cat([torch.mean(emb, dim=1) for emb in latent_emb_mod.values()], dim=1)
         bi_attn_emb = torch.max(bi_attn_emb, dim=1)[0]
-        tri_attn_emb = torch.max(tri_attn_emb, dim=1)[0]
-        x = torch.cat([bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
+        # tri_attn_emb = torch.max(tri_attn_emb, dim=1)[0]
+        x = torch.cat([bi_attn_emb, meta_emb], dim=1)
         # x = torch.cat([latent_emb, bi_attn_emb, tri_attn_emb, meta_emb], dim=1)
         x = self.fc1(x)
         x = F.relu(self.dropout(x))
